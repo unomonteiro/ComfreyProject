@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "606798042508",
+    "firebase_url": "https://comfrey-project.firebaseio.com",
+    "project_id": "comfrey-project",
+    "storage_bucket": "comfrey-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606798042508:android:4f548c4269d79ad4",
+        "android_client_info": {
+          "package_name": "io.monteirodev.comfreyproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606798042508-3h49uhepi7c7vbudfm4i3idiffovccqr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.monteirodev.comfreyproject",
+            "certificate_hash": "a1831f9a0571311dbc864bc67caf871c0b0e330c"
+          }
+        },
+        {
+          "client_id": "606798042508-oslcl8tg24a463j62pf90pdlt8m0mt3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMS9c6P7aBXGkfs5LY2pMu7ay5jiFOTec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606798042508-oslcl8tg24a463j62pf90pdlt8m0mt3m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
