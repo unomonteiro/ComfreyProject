@@ -7,4 +7,8 @@
     <string name="ingredients">Ingredients</string>
     <string name="profile_picture_content_description">profile picture</string>
     <string name="plant_picture_content_description">plant picture</string>
+    <string name="plants">Plants</string>
+    <string name="recipes">Recipes</string>
+    <string name="get_involved">Get Involved</string>
+    <string name="about">About</string>
 </resources>

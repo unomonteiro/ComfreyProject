@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".PlantsActivity"
+            android:label="@string/plants"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -33,6 +34,7 @@
                 android:value=".PlantsActivity" />
         </activity>
         <activity android:name=".RecipesActivity"
+            android:label="@string/recipes"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -45,12 +47,14 @@
                 android:value=".RecipesActivity" />
         </activity>
         <activity android:name=".GetInvolvedActivity"
+            android:label="@string/get_involved"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".AboutActivity"
+            android:label="@string/about"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
