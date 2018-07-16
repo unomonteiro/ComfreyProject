@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Comfrey Project</string>
+    <string name="image_content_description">menu image</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="profile_picture_content_description">profile picture</string>
+    <string name="plant_picture_content_description">plant picture</string>
 </resources>
