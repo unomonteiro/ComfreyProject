@@ -11,4 +11,9 @@
     <string name="recipes">Recipes</string>
     <string name="get_involved">Get Involved</string>
     <string name="about">About</string>
+    <string name="plant_care">Care</string>
+    <string name="plant_information">Information</string>
+    <string name="lorem_expert_body">A volunteer picture at the left, a person who is involved with the plant and has local knowledge, someone like an expert, a patreon  or someone to do for any other information about the plant.”</string>
+    <string name="lorem_veggie">Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</string>
+
 </resources>

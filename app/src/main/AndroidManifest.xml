@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".ui.plants.PlantsActivity"
             android:label="@string/plants"
+            android:launchMode="singleTop"
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

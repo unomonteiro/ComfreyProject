@@ -7,41 +7,41 @@
     android:layout_height="wrap_content"
     app:cardCornerRadius="@dimen/dimen4dp"
     tools:showIn="@layout/fragment_plant_details">
-    
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/expert_iv"
+            android:id="@+id/expert_image_view"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:contentDescription="@string/profile_picture_content_description"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            android:contentDescription="@string/profile_picture_content_description"
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/expert_title_tv"
+            android:id="@+id/expert_title_text_view"
             style="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:layout_width="280dp"
+            android:layout_width="0dp"
             android:layout_height="28dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/expert_iv"
+            app:layout_constraintStart_toEndOf="@+id/expert_image_view"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/full_names" />
 
         <TextView
-            android:id="@+id/recipe_step_text_view"
+            android:id="@+id/expert_body_text_view"
             style="@style/Base.TextAppearance.AppCompat.Body1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -49,12 +49,11 @@
             android:layout_marginBottom="8dp"
             android:gravity="center_vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/expert_title_tv"
-            app:layout_constraintStart_toStartOf="@id/expert_title_tv"
-            app:layout_constraintTop_toBottomOf="@+id/expert_title_tv"
-            tools:text='"A volunteer picture at the left, a person who is involved with the plant and has local knowledge, someone like an expert, a patreon  or someone to do for any other information about the plant.”' />
-        
-    </android.support.constraint.ConstraintLayout>
+            app:layout_constraintEnd_toEndOf="@+id/expert_title_text_view"
+            app:layout_constraintStart_toStartOf="@id/expert_title_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/expert_title_text_view"
+            tools:text="@string/lorem_expert_body" />
 
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.v7.widget.CardView>
