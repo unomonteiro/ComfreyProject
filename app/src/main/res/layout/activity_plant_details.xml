@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".PlantDetailsActivity">
+    tools:context=".ui.plants.PlantDetailsActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -49,6 +49,6 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <include tools:layout="@layout/fragment_plant_details"/>
+    <include layout="@layout/fragment_plant_details"/>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -1,4 +1,4 @@
-package io.monteirodev.comfreyproject.database;
+package io.monteirodev.comfreyproject.data;
 
 public class MyMenuOption {
     public static final String PLANTS = "plants";

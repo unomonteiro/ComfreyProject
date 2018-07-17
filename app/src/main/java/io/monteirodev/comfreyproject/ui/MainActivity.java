@@ -1,4 +1,4 @@
-package io.monteirodev.comfreyproject;
+package io.monteirodev.comfreyproject.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -13,12 +13,15 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.monteirodev.comfreyproject.database.MyMenuOption;
+import io.monteirodev.comfreyproject.R;
+import io.monteirodev.comfreyproject.data.MyMenuOption;
+import io.monteirodev.comfreyproject.ui.plants.PlantsActivity;
+import io.monteirodev.comfreyproject.ui.recipes.RecipesActivity;
 
-import static io.monteirodev.comfreyproject.database.MyMenuOption.ABOUT;
-import static io.monteirodev.comfreyproject.database.MyMenuOption.GET_INVOLVED;
-import static io.monteirodev.comfreyproject.database.MyMenuOption.PLANTS;
-import static io.monteirodev.comfreyproject.database.MyMenuOption.RECIPES;
+import static io.monteirodev.comfreyproject.data.MyMenuOption.ABOUT;
+import static io.monteirodev.comfreyproject.data.MyMenuOption.GET_INVOLVED;
+import static io.monteirodev.comfreyproject.data.MyMenuOption.PLANTS;
+import static io.monteirodev.comfreyproject.data.MyMenuOption.RECIPES;
 
 public class MainActivity extends AppCompatActivity implements MenuAdapter.MenuClickListener {
 

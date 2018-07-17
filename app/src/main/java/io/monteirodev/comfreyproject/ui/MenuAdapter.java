@@ -1,4 +1,4 @@
-package io.monteirodev.comfreyproject;
+package io.monteirodev.comfreyproject.ui;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -12,14 +12,15 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.monteirodev.comfreyproject.database.MyMenuOption;
+import io.monteirodev.comfreyproject.R;
+import io.monteirodev.comfreyproject.data.MyMenuOption;
 
 class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
 
     private MenuClickListener mMenuClickListener;
     private List<MyMenuOption> mOptions;
 
-    public MenuAdapter(MenuClickListener clickListener) {
+    MenuAdapter(MenuClickListener clickListener) {
         mMenuClickListener = clickListener;
     }
 
@@ -68,7 +69,7 @@ class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
         TextView title;
         MyMenuOption option;
 
-        public MenuViewHolder(View itemView) {
+        MenuViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

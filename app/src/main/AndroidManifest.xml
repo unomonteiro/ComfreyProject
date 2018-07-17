@@ -13,52 +13,52 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PlantsActivity"
+        <activity android:name=".ui.plants.PlantsActivity"
             android:label="@string/plants"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".ui.MainActivity" />
         </activity>
-        <activity android:name=".PlantDetailsActivity"
+        <activity android:name=".ui.plants.PlantDetailsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:parentActivityName=".PlantsActivity">
+            android:parentActivityName=".ui.plants.PlantsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".PlantsActivity" />
+                android:value=".ui.plants.PlantsActivity" />
         </activity>
-        <activity android:name=".RecipesActivity"
+        <activity android:name=".ui.recipes.RecipesActivity"
             android:label="@string/recipes"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".ui.MainActivity" />
         </activity>
-        <activity android:name=".RecipeDetailsActivity"
-            android:parentActivityName=".RecipesActivity">
+        <activity android:name=".ui.recipes.RecipeDetailsActivity"
+            android:parentActivityName=".ui.recipes.RecipesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".RecipesActivity" />
+                android:value=".ui.recipes.RecipesActivity" />
         </activity>
-        <activity android:name=".GetInvolvedActivity"
+        <activity android:name=".ui.GetInvolvedActivity"
             android:label="@string/get_involved"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".ui.MainActivity" />
         </activity>
-        <activity android:name=".AboutActivity"
+        <activity android:name=".ui.AboutActivity"
             android:label="@string/about"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".ui.MainActivity" />
         </activity>
     </application>
 

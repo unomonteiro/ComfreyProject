@@ -1,7 +1,9 @@
-package io.monteirodev.comfreyproject;
+package io.monteirodev.comfreyproject.ui.recipes;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import io.monteirodev.comfreyproject.R;
 
 public class RecipesActivity extends AppCompatActivity {
 

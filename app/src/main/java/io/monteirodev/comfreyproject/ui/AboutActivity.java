@@ -1,13 +1,15 @@
-package io.monteirodev.comfreyproject;
+package io.monteirodev.comfreyproject.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class RecipeDetailsActivity extends AppCompatActivity {
+import io.monteirodev.comfreyproject.R;
+
+public class AboutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recipe_details);
+        setContentView(R.layout.activity_about);
     }
 }
