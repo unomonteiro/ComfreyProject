@@ -24,7 +24,6 @@ public class PlantsActivity extends AppCompatActivity implements PlantsAdapter.P
 
     private PlantsAdapter mPlantsAdapter;
     private List<Plant> mPlantList;
-    private List<Plant> mPlants;
 
     @Override
 
