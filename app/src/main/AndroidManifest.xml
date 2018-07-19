@@ -28,7 +28,7 @@
                 android:value=".ui.MainActivity" />
         </activity>
         <activity android:name=".ui.plants.PlantDetailsActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:theme="@style/AppTheme.SimpleCoordinatorTheme"
             android:parentActivityName=".ui.plants.PlantsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

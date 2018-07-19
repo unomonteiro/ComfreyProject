@@ -44,14 +44,14 @@ public class PlantDetailsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_plant_details_alt, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_plant_details, container, false);
         unbinder = ButterKnife.bind(this, rootView);
         mExpertNameTextView.setText(mPlant.getExpertName());
-        mExpertImageView.setImageResource(R.drawable.place_holder_image);
+        mExpertImageView.setImageResource(R.drawable.profile_placeholder);
         mExpertBodyTextView.setText(R.string.lorem_expert_body);
         mInfoBodyTextView.setText(R.string.lorem_veggie);
         mBenefitsBodyTextView.setText(R.string.lorem_veggie);
-        mCareBodyTextView.setText(R.string.lorem_veggie);
+        mCareBodyTextView.setText(R.string.lorem_veggie_plus);
 
         return rootView;
     }

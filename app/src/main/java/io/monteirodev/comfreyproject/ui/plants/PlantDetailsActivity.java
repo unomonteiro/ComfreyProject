@@ -49,18 +49,13 @@ public class PlantDetailsActivity extends AppCompatActivity {
                     .add(R.id.plant_container, plantDetailsFragment)
                     .commit();
         }
-
-
-
+        
         if (TextUtils.isEmpty(mPlant.getImageUrl())) {
-            mPlantImageView.setImageResource(R.drawable.place_holder_image);
+            mPlantImageView.setImageResource(R.drawable.wide_image_placeholder);
         } else {
             GlideApp.with(this)
                     .load(mPlant.getImageUrl())
                     .into(mPlantImageView);
         }
-        GlideApp.with(this)
-                .load(mPlant.getImageUrl())
-                .into(mPlantImageView);
     }
 }

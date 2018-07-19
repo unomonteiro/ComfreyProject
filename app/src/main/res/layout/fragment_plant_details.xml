@@ -1,10 +1,64 @@
-<android.support.v7.widget.RecyclerView
+<android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
-    tools:listitem="@layout/plant_switch_item"
-    tools:context=".ui.plants.PlantDetailsActivity"/>
+    tools:context=".ui.plants.PlantDetailsActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/expert_item"
+            layout="@layout/plant_details_expert_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen8dp"
+            android:layout_marginStart="@dimen/dimen8dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/info_item"
+            layout="@layout/plant_details_info_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen8dp"
+            android:layout_marginStart="@dimen/dimen8dp"
+            android:layout_marginTop="@dimen/dimen8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/expert_item" />
+
+        <include
+            android:id="@+id/benefits_item"
+            layout="@layout/plant_details_benefits_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen8dp"
+            android:layout_marginStart="@dimen/dimen8dp"
+            android:layout_marginTop="@dimen/dimen8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/info_item" />
+
+        <include
+            android:id="@+id/care_item"
+            layout="@layout/plant_details_care_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/benefits_item"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>

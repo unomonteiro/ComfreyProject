@@ -43,6 +43,7 @@ public class PlantsActivity extends AppCompatActivity implements PlantsAdapter.P
     public List<Plant> getPlants() {
         List<Plant> newPlants = new ArrayList<>();
         newPlants.add(new Plant(1, "Couve", "https://dl.dropboxusercontent.com/s/vd0cbsiraddueix/couve_galega.jpg", "Belmira", null, "Some long information about the plant to be filled in later"));
+        newPlants.add(new Plant(1, "Lettuce", "https://dl.dropboxusercontent.com/s/7sp2bsplynb3zks/lettuce.jpg", "Lucinda", null, "Some long information about the plant to be filled in later"));
         newPlants.add(new Plant(1, "Tomato", null, "Tomas", null, "Some long information about the plant to be filled in later"));
         return newPlants;
     }

@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements MenuAdapter.MenuC
         List<MyMenuOption> menuOptions = new ArrayList<>();
         menuOptions.add(new MyMenuOption(PLANTS, getString(R.string.plants), R.drawable.plants));
         menuOptions.add(new MyMenuOption(RECIPES, getString(R.string.recipes), R.drawable.recipes));
-        menuOptions.add(new MyMenuOption(GET_INVOLVED, getString(R.string.get_involved), R.drawable.place_holder_image));
-        menuOptions.add(new MyMenuOption(ABOUT, getString(R.string.about), R.drawable.place_holder_image));
+        menuOptions.add(new MyMenuOption(GET_INVOLVED, getString(R.string.get_involved), R.drawable.wide_image_placeholder));
+        menuOptions.add(new MyMenuOption(ABOUT, getString(R.string.about), R.drawable.wide_image_placeholder));
         return menuOptions;
     }
 

@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.List;
 
 import butterknife.BindView;
@@ -40,7 +38,7 @@ public class PlantsAdapter extends RecyclerView.Adapter<PlantsAdapter.PlantViewH
     public void onBindViewHolder(@NonNull final PlantViewHolder holder, int position) {
         final Plant plant = mPlants.get(position);
         if (TextUtils.isEmpty(plant.getImageUrl())) {
-            holder.imageView.setImageResource(R.drawable.place_holder_image);
+            holder.imageView.setImageResource(R.drawable.wide_image_placeholder);
         } else {
             GlideApp.with(holder.imageView.getContext())
             .load(plant.getImageUrl())
