@@ -63,8 +63,6 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <!-- ui design <include layout="@layout/fragment_plant_details"/>-->
-
     <FrameLayout android:id="@+id/plant_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

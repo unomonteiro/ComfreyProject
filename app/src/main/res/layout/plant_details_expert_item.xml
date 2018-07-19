@@ -52,7 +52,7 @@
             app:layout_constraintEnd_toEndOf="@+id/expert_title_text_view"
             app:layout_constraintStart_toStartOf="@id/expert_title_text_view"
             app:layout_constraintTop_toBottomOf="@+id/expert_title_text_view"
-            tools:text="@string/lorem_expert_body" />
+            tools:text="@string/lorem_expert" />
 
     </android.support.constraint.ConstraintLayout>
 

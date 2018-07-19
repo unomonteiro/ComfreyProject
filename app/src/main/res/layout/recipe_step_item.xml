@@ -4,11 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dimen16dp"
+    android:layout_marginEnd="@dimen/dimen16dp"
+    android:layout_marginTop="@dimen/dimen4dp"
+    android:layout_marginBottom="@dimen/dimen4dp"
     app:cardCornerRadius="@dimen/dimen4dp">
     <!--tools:showIn="@layout/activity_recipe_details"-->
 
     <TextView
-        android:id="@+id/info_body_text_view"
+        android:id="@+id/step_body_text_view"
         style="@style/Base.TextAppearance.AppCompat.Subhead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

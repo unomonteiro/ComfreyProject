@@ -14,7 +14,6 @@ import butterknife.ButterKnife;
 import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.data.Plant;
 
-import static io.monteirodev.comfreyproject.ui.plants.PlantDetailsActivity.PLANT_ID_KEY;
 import static io.monteirodev.comfreyproject.ui.plants.PlantDetailsActivity.PLANT_KEY;
 
 public class PlantsActivity extends AppCompatActivity implements PlantsAdapter.PlantClickListener {

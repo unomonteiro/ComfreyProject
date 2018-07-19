@@ -42,6 +42,7 @@
                 android:value=".ui.MainActivity" />
         </activity>
         <activity android:name=".ui.recipes.RecipeDetailsActivity"
+            android:theme="@style/AppTheme.SimpleCoordinatorTheme"
             android:parentActivityName=".ui.recipes.RecipesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

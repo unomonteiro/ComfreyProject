@@ -16,8 +16,7 @@ import io.monteirodev.comfreyproject.utils.GlideApp;
 
 public class PlantDetailsActivity extends AppCompatActivity {
 
-    public static final String PLANT_ID_KEY = "plant_id";
-    public static final String PLANT_KEY = "plant_id";
+    public static final String PLANT_KEY = "io.monteirodev.comfreyproject.ui.plants.plant_id";
 
     @BindView(R.id.plant_image)
     ImageView mPlantImageView;
@@ -49,7 +48,7 @@ public class PlantDetailsActivity extends AppCompatActivity {
                     .add(R.id.plant_container, plantDetailsFragment)
                     .commit();
         }
-        
+
         if (TextUtils.isEmpty(mPlant.getImageUrl())) {
             mPlantImageView.setImageResource(R.drawable.wide_image_placeholder);
         } else {

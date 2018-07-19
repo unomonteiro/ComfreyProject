@@ -1,20 +1,28 @@
 <resources>
     <string name="app_name">Comfrey Project</string>
+
+    <string name="detail_error_message">Oops, bad weed!</string>
     <string name="image_content_description">menu image</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="ingredients">Ingredients</string>
-    <string name="profile_picture_content_description">profile picture</string>
-    <string name="plant_picture_content_description">plant picture</string>
     <string name="plants">Plants</string>
-    <string name="recipes">Recipes</string>
-    <string name="get_involved">Get Involved</string>
-    <string name="about">About</string>
+    <string name="plant_picture_content_description">plant picture</string>
+    <string name="profile_picture_content_description">profile picture</string>
     <string name="plant_care">Care</string>
     <string name="plant_information">Information</string>
-    <string name="lorem_expert_body">A volunteer picture at the left, a person who is involved with the plant and has local knowledge, someone like an expert, a patreon  or someone to do for any other information about the plant.”</string>
-    <string name="lorem_veggie">Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</string>
-    <string name="lorem_veggie_plus">Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</string>
+    <string name="recipes">Recipes</string>
+    <string name="recipe_picture_content_description">recipe image</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="quantity_measure_ingredient">%1$s&lt;b>%2$s %3$s&lt;/b> %4$s</string>
+    <string name="number_step">%1$d. %2$s</string>
+
+    <string name="get_involved">Get Involved</string>
+
+    <string name="about">About</string>
+
+    <string name="lorem_expert">A volunteer picture at the left, a person who is involved with the plant and has local knowledge, someone like an expert, a patreon  or someone to do for any other information about the plant.</string>
+    <string name="lorem_m">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, tincidunt a interdum a, ornare ut leo. Phasellus id varius metus. Donec et rhoncus sapien. Etiam vitae sodales dolor. Cras maximus facilisis cursus."</string>
+    <string name="lorem_l">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, tincidunt a interdum a, ornare ut leo. Phasellus id varius metus. Donec et rhoncus sapien. Etiam vitae sodales dolor. Cras maximus facilisis cursus. Nullam pretium neque quis elit gravida convallis. Praesent maximus turpis sed feugiat volutpat. Vestibulum lorem magna, gravida eu cursus sed, tincidunt vel diam. In eu massa non lacus tristique dignissim id vitae nulla."</string>
+
+    <string name="lorem_xl">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, tincidunt a interdum a, ornare ut leo. Phasellus id varius metus. Donec et rhoncus sapien. Etiam vitae sodales dolor. Cras maximus facilisis cursus. Nullam pretium neque quis elit gravida convallis. Praesent maximus turpis sed feugiat volutpat. Vestibulum lorem magna, gravida eu cursus sed, tincidunt vel diam. In eu massa non lacus tristique dignissim id vitae nulla. Morbi sit amet dui pellentesque, egestas arcu in, congue magna. Proin faucibus leo id sapien condimentum, id sodales metus cursus. Nam urna libero, pellentesque eget tortor at, aliquet pulvinar sapien. Nam at purus in leo laoreet imperdiet et non neque. Quisque bibendum massa libero, quis tempus neque aliquam ut. Maecenas accumsan lorem mollis, consectetur massa sit amet, dignissim elit."</string>
 
 </resources>

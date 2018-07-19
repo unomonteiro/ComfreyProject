@@ -48,10 +48,10 @@ public class PlantDetailsFragment extends Fragment {
         unbinder = ButterKnife.bind(this, rootView);
         mExpertNameTextView.setText(mPlant.getExpertName());
         mExpertImageView.setImageResource(R.drawable.profile_placeholder);
-        mExpertBodyTextView.setText(R.string.lorem_expert_body);
-        mInfoBodyTextView.setText(R.string.lorem_veggie);
-        mBenefitsBodyTextView.setText(R.string.lorem_veggie);
-        mCareBodyTextView.setText(R.string.lorem_veggie_plus);
+        mExpertBodyTextView.setText(R.string.lorem_expert);
+        mInfoBodyTextView.setText(R.string.lorem_m);
+        mBenefitsBodyTextView.setText(R.string.lorem_m);
+        mCareBodyTextView.setText(R.string.lorem_l);
 
         return rootView;
     }
