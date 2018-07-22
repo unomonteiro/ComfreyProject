@@ -18,7 +18,7 @@ import static io.monteirodev.comfreyproject.ui.plants.PlantDetailsActivity.PLANT
 
 public class PlantsActivity extends AppCompatActivity implements PlantsAdapter.PlantClickListener {
 
-    @BindView(R.id.plants_recicler_view)
+    @BindView(R.id.plants_recycler_view)
     RecyclerView mRecyclerView;
 
     private PlantsAdapter mPlantsAdapter;

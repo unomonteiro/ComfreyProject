@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -16,6 +16,13 @@
     </style>
     <style name="AppTheme.SimpleCoordinatorTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="recycler_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingTop">@dimen/dimen8dp</item>
+        <item name="android:paddingBottom">@dimen/dimen8dp</item>
     </style>
 
 </resources>

@@ -25,7 +25,7 @@ import static io.monteirodev.comfreyproject.utils.UiUtils.getDeviceLayoutManager
 
 public class MainActivity extends AppCompatActivity implements MenuAdapter.MenuClickListener {
 
-    @BindView(R.id.menu_recicler_view)
+    @BindView(R.id.menu_recycler_view)
     RecyclerView mRecyclerView;
     @BindView(R.id.loading_view)
     View mLoadingView;

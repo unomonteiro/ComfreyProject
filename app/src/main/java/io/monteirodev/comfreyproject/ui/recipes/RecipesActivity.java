@@ -2,15 +2,12 @@ package io.monteirodev.comfreyproject.ui.recipes;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,7 +25,7 @@ public class RecipesActivity extends AppCompatActivity implements
     private static final String RECIPE_INDEX_KEY = "RECIPE_INDEX_KEY";
     private static final String RECIPE_KEY = "RECIPE_KEY";
 
-    @BindView(R.id.recipes_recicler_view)
+    @BindView(R.id.recipes_recycler_view)
     RecyclerView mRecyclerView;
 
     private RecipesAdapter mRecipesAdapter;

@@ -6,12 +6,9 @@
     tools:context=".ui.plants.PlantsActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/plants_recicler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="@dimen/dimen8dp"
-        android:paddingBottom="@dimen/dimen8dp"
+        android:id="@+id/plants_recycler_view"
+        style="@style/recycler_style"
         tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        tools:listitem="@layout/recipes_item"/>
+        tools:listitem="@layout/recipes_item" />
 
 </android.support.constraint.ConstraintLayout>

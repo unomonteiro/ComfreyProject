@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/menu_recicler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="@dimen/dimen8dp"
-        android:paddingBottom="@dimen/dimen8dp"
+        android:id="@+id/menu_recycler_view"
+        style="@style/recycler_style"
         tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        tools:listitem="@layout/main_item"/>
+        tools:listitem="@layout/main_item" />
 
     <ProgressBar
         android:id="@+id/loading_view"

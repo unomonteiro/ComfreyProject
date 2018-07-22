@@ -3,11 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/recipe_details_recycler_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="@dimen/dimen8dp"
-    android:paddingBottom="@dimen/dimen8dp"
+    style="@style/recycler_style"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
     tools:listitem="@layout/recipe_switch_item"
-    tools:context=".ui.recipes.RecipeDetailsFragment"/>
+    tools:context=".ui.recipes.RecipeDetailsFragment" />
