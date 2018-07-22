@@ -64,6 +64,9 @@ dependencies {
     // gson
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
 
+    // multiline collapsingToolbar
+    implementation "net.opacapp:multiline-collapsingtoolbar:$androidSupportVersion"
+
     // retrofit
     implementation "com.google.code.gson:gson:$gsonVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"

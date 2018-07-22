@@ -21,7 +21,6 @@ public class RecipeDetailsFragment extends Fragment {
 
     @BindView(R.id.recipe_details_recycler_view)
     RecyclerView mRecyclerView;
-    private RecipeDetailsAdapter mRecipeDetailsAdapter;
 
     private Recipe mRecipe;
     private Unbinder unbinder;
@@ -39,11 +38,10 @@ public class RecipeDetailsFragment extends Fragment {
 
         if (mRecipe != null) {
             mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-            RecipeDetailsActivity recipeDetailsActivity = (RecipeDetailsActivity) getActivity();
-            mRecipeDetailsAdapter = new RecipeDetailsAdapter();
-            mRecipeDetailsAdapter.setIngredients(mRecipe.getIngredients());
-            mRecipeDetailsAdapter.setSteps(mRecipe.getSteps());
-            mRecyclerView.setAdapter(mRecipeDetailsAdapter);
+            RecipeDetailsAdapter detailsAdapter = new RecipeDetailsAdapter();
+            detailsAdapter.setIngredients(mRecipe.getIngredients());
+            detailsAdapter.setSteps(mRecipe.getSteps());
+            mRecyclerView.setAdapter(detailsAdapter);
         }
         return rootView;
     }

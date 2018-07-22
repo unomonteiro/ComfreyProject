@@ -16,13 +16,14 @@ import io.monteirodev.comfreyproject.utils.GlideApp;
 
 public class PlantDetailsActivity extends AppCompatActivity {
 
-    public static final String PLANT_KEY = "io.monteirodev.comfreyproject.ui.plants.plant_id";
-
-    @BindView(R.id.plant_image)
-    ImageView mPlantImageView;
+    public static final String PLANT_EXTRA = "io.monteirodev.comfreyproject.ui.plants.plant_id";
 
     @BindView(R.id.collapsing_toolbar)
     CollapsingToolbarLayout mCollapsingToolbarLayout;
+    @BindView(R.id.plant_image)
+    ImageView mPlantImageView;
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
 
     private Plant mPlant;
 
@@ -32,8 +33,8 @@ public class PlantDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_plant_details);
         ButterKnife.bind(this);
 
-        mPlant = getIntent().getParcelableExtra(PLANT_KEY);
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        mPlant = getIntent().getParcelableExtra(PLANT_EXTRA);
+        setSupportActionBar(mToolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);

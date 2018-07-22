@@ -1,13 +1,15 @@
 package io.monteirodev.comfreyproject.ui.recipes;
 
 import android.content.Intent;
-import android.support.design.widget.CollapsingToolbarLayout;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -17,13 +19,14 @@ import io.monteirodev.comfreyproject.utils.GlideApp;
 
 public class RecipeDetailsActivity extends AppCompatActivity {
 
-    public static final String RECIPE_KEY = "io.monteirodev.comfreyproject.ui.plants.recipe_key";
-
-    @BindView(R.id.recipe_image)
-    ImageView mRecipeImageView;
+    public static final String RECIPE_EXTRA = "io.monteirodev.comfreyproject.ui.plants.recipe_key";
 
     @BindView(R.id.collapsing_toolbar)
     CollapsingToolbarLayout mCollapsingToolbarLayout;
+    @BindView(R.id.recipe_image)
+    ImageView mRecipeImageView;
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
 
     private Recipe mRecipe;
 
@@ -34,15 +37,15 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        if (intent != null && intent.hasExtra(RECIPE_KEY)) {
-            mRecipe = intent.getParcelableExtra(RECIPE_KEY);
-
+        if (intent != null && intent.hasExtra(RECIPE_EXTRA)) {
+            mRecipe = intent.getParcelableExtra(RECIPE_EXTRA);
         }
         if (mRecipe == null) {
             finish();
-            Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_LONG).show();
         }
 
+        setSupportActionBar(mToolbar);
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
             supportActionBar.setDisplayHomeAsUpEnabled(true);

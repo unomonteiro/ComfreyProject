@@ -1,9 +1,8 @@
 package io.monteirodev.comfreyproject.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
@@ -22,6 +21,7 @@ import static io.monteirodev.comfreyproject.data.MyMenuOption.ABOUT;
 import static io.monteirodev.comfreyproject.data.MyMenuOption.GET_INVOLVED;
 import static io.monteirodev.comfreyproject.data.MyMenuOption.PLANTS;
 import static io.monteirodev.comfreyproject.data.MyMenuOption.RECIPES;
+import static io.monteirodev.comfreyproject.utils.UiUtils.getDeviceLayoutManager;
 
 public class MainActivity extends AppCompatActivity implements MenuAdapter.MenuClickListener {
 
@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity implements MenuAdapter.MenuC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        mRecyclerView.setLayoutManager(getDeviceLayoutManager(this));
         mMenuAdapter = new MenuAdapter(this);
         mRecyclerView.setAdapter(mMenuAdapter);
         mMyMenuOptions = getMyMenuOptions();

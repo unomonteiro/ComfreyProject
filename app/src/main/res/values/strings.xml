@@ -9,7 +9,9 @@
     <string name="profile_picture_content_description">profile picture</string>
     <string name="plant_care">Care</string>
     <string name="plant_information">Information</string>
+
     <string name="recipes">Recipes</string>
+    <string name="recipes_with_name">Recipes - %s</string>
     <string name="recipe_picture_content_description">recipe image</string>
     <string name="ingredients">Ingredients</string>
     <string name="quantity_measure_ingredient">%1$s&lt;b>%2$s %3$s&lt;/b> %4$s</string>

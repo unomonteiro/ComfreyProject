@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    tools:showIn="@layout/activity_plants"
-    app:cardCornerRadius="@dimen/dimen4dp">
+    android:layout_marginStart="@dimen/dimen16dp"
+    android:layout_marginEnd="@dimen/dimen16dp"
+    android:layout_marginTop="@dimen/dimen4dp"
+    android:layout_marginBottom="@dimen/dimen4dp"
+    app:cardCornerRadius="@dimen/dimen4dp"
+    tools:showIn="@layout/activity_plants">
 
     <include layout="@layout/default_item" />
 

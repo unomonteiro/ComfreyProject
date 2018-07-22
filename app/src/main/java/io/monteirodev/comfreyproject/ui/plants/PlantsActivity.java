@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.data.Plant;
 
-import static io.monteirodev.comfreyproject.ui.plants.PlantDetailsActivity.PLANT_KEY;
+import static io.monteirodev.comfreyproject.ui.plants.PlantDetailsActivity.PLANT_EXTRA;
 
 public class PlantsActivity extends AppCompatActivity implements PlantsAdapter.PlantClickListener {
 
@@ -49,7 +49,7 @@ public class PlantsActivity extends AppCompatActivity implements PlantsAdapter.P
     @Override
     public void onPlantClick(Plant plant) {
         Intent detailIntent = new Intent(this, PlantDetailsActivity.class);
-        detailIntent.putExtra(PLANT_KEY, plant);
+        detailIntent.putExtra(PLANT_EXTRA, plant);
         startActivity(detailIntent);
     }
 }

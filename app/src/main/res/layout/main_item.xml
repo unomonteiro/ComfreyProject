@@ -8,8 +8,8 @@
     android:layout_marginEnd="@dimen/dimen16dp"
     android:layout_marginTop="@dimen/dimen4dp"
     android:layout_marginBottom="@dimen/dimen4dp"
-    tools:showIn="@layout/activity_main"
-    app:cardCornerRadius="@dimen/dimen4dp">
+    app:cardCornerRadius="@dimen/dimen4dp"
+    tools:showIn="@layout/activity_main">
 
     <include layout="@layout/default_item" />
 

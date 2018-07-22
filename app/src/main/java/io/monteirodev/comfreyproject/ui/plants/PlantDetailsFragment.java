@@ -17,7 +17,6 @@ import io.monteirodev.comfreyproject.data.Plant;
 
 public class PlantDetailsFragment extends Fragment {
 
-
     @BindView(R.id.expert_image_view)
     ImageView mExpertImageView;
     @BindView(R.id.expert_title_text_view)
@@ -46,12 +45,14 @@ public class PlantDetailsFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_plant_details, container, false);
         unbinder = ButterKnife.bind(this, rootView);
-        mExpertNameTextView.setText(mPlant.getExpertName());
-        mExpertImageView.setImageResource(R.drawable.profile_placeholder);
-        mExpertBodyTextView.setText(R.string.lorem_expert);
-        mInfoBodyTextView.setText(R.string.lorem_m);
-        mBenefitsBodyTextView.setText(R.string.lorem_m);
-        mCareBodyTextView.setText(R.string.lorem_l);
+        if (mPlant != null) {
+            mExpertNameTextView.setText(mPlant.getExpertName());
+            mExpertImageView.setImageResource(R.drawable.profile_placeholder);
+            mExpertBodyTextView.setText(R.string.lorem_expert);
+            mInfoBodyTextView.setText(R.string.lorem_m);
+            mBenefitsBodyTextView.setText(R.string.lorem_m);
+            mCareBodyTextView.setText(R.string.lorem_l);
+        }
 
         return rootView;
     }

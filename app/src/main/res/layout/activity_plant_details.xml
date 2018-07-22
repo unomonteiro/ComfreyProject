@@ -47,10 +47,10 @@
                     tools:background="@tools:sample/backgrounds/scenic"/>
 
                 <View
-                    android:id="@+id/improve_up_and_title_visibility"
+                    android:id="@+id/contrast_scrim"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#16000000"/>
+                    android:background="#2e000000"/>
 
             </FrameLayout>
 
