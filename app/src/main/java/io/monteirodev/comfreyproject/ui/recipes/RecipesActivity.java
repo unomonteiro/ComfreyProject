@@ -17,6 +17,7 @@ import io.monteirodev.comfreyproject.data.Recipe;
 import io.monteirodev.comfreyproject.data.Step;
 
 import static io.monteirodev.comfreyproject.ui.recipes.RecipeDetailsActivity.RECIPE_EXTRA;
+import static io.monteirodev.comfreyproject.utils.UiUtils.getDeviceLayoutManager;
 
 public class RecipesActivity extends AppCompatActivity implements
         RecipesAdapter.RecipesClickListener {
@@ -41,12 +42,17 @@ public class RecipesActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_recipes);
         ButterKnife.bind(this);
 
+        mIsTablet = getResources().getBoolean(R.bool.is_tablet);
+        LinearLayoutManager layoutManager = getDeviceLayoutManager(this);
+        if (mIsTablet) {
+            layoutManager = new LinearLayoutManager(this);
+        }
+        mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecipesAdapter = new RecipesAdapter(this);
         mRecyclerView.setAdapter(mRecipesAdapter);
         mRecipeList = getRecipes();
         mRecipesAdapter.setRecipes(mRecipeList);
-        mIsTablet = getResources().getBoolean(R.bool.is_tablet);
         if (mIsTablet) {
             if (savedInstanceState == null) {
                 mRecipeIndex = 0;

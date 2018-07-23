@@ -15,6 +15,7 @@ import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.data.Plant;
 
 import static io.monteirodev.comfreyproject.ui.plants.PlantDetailsActivity.PLANT_EXTRA;
+import static io.monteirodev.comfreyproject.utils.UiUtils.getDeviceLayoutManager;
 
 public class PlantsActivity extends AppCompatActivity implements 
         PlantsAdapter.PlantClickListener {
@@ -40,12 +41,16 @@ public class PlantsActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_plants);
         ButterKnife.bind(this);
 
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mIsTablet = getResources().getBoolean(R.bool.is_tablet);
+        LinearLayoutManager layoutManager = getDeviceLayoutManager(this);
+        if (mIsTablet) {
+            layoutManager = new LinearLayoutManager(this);
+        }
+        mRecyclerView.setLayoutManager(layoutManager);
         mPlantsAdapter = new PlantsAdapter(this);
         mRecyclerView.setAdapter(mPlantsAdapter);
         mPlantList = getPlants();
         mPlantsAdapter.setPlantList(mPlantList);
-        mIsTablet = getResources().getBoolean(R.bool.is_tablet);
         if (mIsTablet) {
             if (savedInstanceState == null) {
                 mPlantIndex = 0;

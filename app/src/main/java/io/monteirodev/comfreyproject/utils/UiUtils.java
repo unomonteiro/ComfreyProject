@@ -11,11 +11,10 @@ import io.monteirodev.comfreyproject.R;
 public class UiUtils {
 
     public static LinearLayoutManager getDeviceLayoutManager(@NonNull Context context) {
-        boolean isTablet = context.getResources().getBoolean(R.bool.is_tablet);
-        if (isTablet) {
-            DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-            float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
-            int numColumns = (int) (dpWidth / 256);
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
+        int numColumns = (int) (dpWidth / 256);
+        if (numColumns > 1) {
             return new GridLayoutManager(context, numColumns);
         } else {
             return new LinearLayoutManager(context);
