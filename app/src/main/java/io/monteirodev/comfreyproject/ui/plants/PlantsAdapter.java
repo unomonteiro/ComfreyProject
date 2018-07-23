@@ -19,6 +19,8 @@ import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.data.Plant;
 import io.monteirodev.comfreyproject.utils.GlideApp;
 
+import static com.bumptech.glide.load.engine.DiskCacheStrategy.AUTOMATIC;
+
 public class PlantsAdapter extends RecyclerView.Adapter<PlantsAdapter.PlantViewHolder> {
 
     private PlantClickListener mPlantClickListener;
@@ -45,14 +47,16 @@ public class PlantsAdapter extends RecyclerView.Adapter<PlantsAdapter.PlantViewH
             holder.imageView.setImageResource(R.drawable.wide_image_placeholder);
         } else {
             GlideApp.with(holder.imageView.getContext())
-            .load(plant.getImageUrl())
-            .into(holder.imageView);
+                    .load(plant.getImageUrl())
+                    .diskCacheStrategy(AUTOMATIC)
+                    .into(holder.imageView);
         }
         holder.titleView.setText(plant.getName());
         Context context = holder.itemView.getContext();
         final boolean isTablet = context.getResources().getBoolean(R.bool.is_tablet);
         if (isTablet) {
-            holder.itemView.setBackgroundColor(selectedPosition == position ? Color.LTGRAY : Color.WHITE);
+            holder.selectView.setVisibility(
+                    selectedPosition == position ? View.VISIBLE : View.INVISIBLE);
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +99,8 @@ public class PlantsAdapter extends RecyclerView.Adapter<PlantsAdapter.PlantViewH
         ImageView imageView;
         @BindView(R.id.item_text_view)
         TextView titleView;
+        @BindView(R.id.select_view)
+        View selectView;
 
         PlantViewHolder(View itemView) {
             super(itemView);

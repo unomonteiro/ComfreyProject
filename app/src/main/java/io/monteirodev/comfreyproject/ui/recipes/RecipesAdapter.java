@@ -54,7 +54,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
         Context context = holder.itemView.getContext();
         final boolean isTablet = context.getResources().getBoolean(R.bool.is_tablet);
         if (isTablet) {
-            holder.itemView.setBackgroundColor(selectedPosition == position ? Color.LTGRAY : Color.WHITE);
+            holder.selectView.setVisibility(
+                    selectedPosition == position ? View.VISIBLE : View.INVISIBLE);
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +98,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
         TextView recipeName;
         @BindView(R.id.item_image_view)
         ImageView recipeImage;
+        @BindView(R.id.select_view)
+        View selectView;
 
         RecipeViewHolder(View itemView) {
             super(itemView);

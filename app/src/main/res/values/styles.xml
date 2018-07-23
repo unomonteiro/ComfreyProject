@@ -25,4 +25,16 @@
         <item name="android:paddingBottom">@dimen/dimen8dp</item>
     </style>
 
+    <style name="card_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/dimen16dp</item>
+        <item name="android:layout_marginEnd">@dimen/dimen16dp</item>
+        <item name="android:layout_marginTop">@dimen/dimen4dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen4dp</item>
+        <item name="android:clickable">@bool/is_tablet</item>
+        <item name="android:focusable">@bool/is_tablet</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
 </resources>
