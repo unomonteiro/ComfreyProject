@@ -6,8 +6,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.DisplayMetrics;
 
-import io.monteirodev.comfreyproject.R;
-
 public class UiUtils {
 
     public static LinearLayoutManager getDeviceLayoutManager(@NonNull Context context) {

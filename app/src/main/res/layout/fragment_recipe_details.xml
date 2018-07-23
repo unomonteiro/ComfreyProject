@@ -7,4 +7,4 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
     tools:listitem="@layout/recipe_switch_item"
-    tools:context=".ui.recipes.RecipeDetailsFragment" />
+    tools:context=".ui.recipes.RecipesActivity" />
