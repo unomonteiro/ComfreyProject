@@ -1,5 +1,7 @@
 package io.monteirodev.comfreyproject.ui.plants;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -21,6 +23,7 @@ public class PlantsAdapter extends RecyclerView.Adapter<PlantsAdapter.PlantViewH
 
     private PlantClickListener mPlantClickListener;
     private List<Plant> mPlants;
+    private int selectedPosition = RecyclerView.NO_POSITION;
 
     PlantsAdapter(PlantClickListener plantClickListener) {
         mPlantClickListener = plantClickListener;
@@ -37,6 +40,7 @@ public class PlantsAdapter extends RecyclerView.Adapter<PlantsAdapter.PlantViewH
     @Override
     public void onBindViewHolder(@NonNull final PlantViewHolder holder, int position) {
         final Plant plant = mPlants.get(position);
+        holder.itemView.setTag(position);
         if (TextUtils.isEmpty(plant.getImageUrl())) {
             holder.imageView.setImageResource(R.drawable.wide_image_placeholder);
         } else {
@@ -45,10 +49,18 @@ public class PlantsAdapter extends RecyclerView.Adapter<PlantsAdapter.PlantViewH
             .into(holder.imageView);
         }
         holder.titleView.setText(plant.getName());
+        Context context = holder.itemView.getContext();
+        final boolean isTablet = context.getResources().getBoolean(R.bool.is_tablet);
+        if (isTablet) {
+            holder.itemView.setBackgroundColor(selectedPosition == position ? Color.LTGRAY : Color.WHITE);
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mPlantClickListener.onPlantClick(plant);
+                mPlantClickListener.onPlantClick(plant, (int) v.getTag());
+                if (isTablet) {
+                    setSelectedPosition((int) v.getTag());
+                }
             }
         });
 
@@ -67,8 +79,15 @@ public class PlantsAdapter extends RecyclerView.Adapter<PlantsAdapter.PlantViewH
         notifyDataSetChanged();
     }
 
+    public void setSelectedPosition(int newPosition) {
+        // Updating old as well as new positions
+        notifyItemChanged(selectedPosition);
+        selectedPosition = newPosition;
+        notifyItemChanged(selectedPosition);
+    }
+
     public interface PlantClickListener {
-        void onPlantClick(Plant plant);
+        void onPlantClick(Plant plant, int index);
     }
 
     class PlantViewHolder extends RecyclerView.ViewHolder {
@@ -76,7 +95,6 @@ public class PlantsAdapter extends RecyclerView.Adapter<PlantsAdapter.PlantViewH
         ImageView imageView;
         @BindView(R.id.item_text_view)
         TextView titleView;
-        Plant plant;
 
         PlantViewHolder(View itemView) {
             super(itemView);

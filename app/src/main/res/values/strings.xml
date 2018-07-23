@@ -5,6 +5,7 @@
     <string name="image_content_description">menu image</string>
 
     <string name="plants">Plants</string>
+    <string name="plants_with_name">Plants - %s</string>
     <string name="plant_picture_content_description">plant picture</string>
     <string name="profile_picture_content_description">profile picture</string>
     <string name="plant_care">Care</string>

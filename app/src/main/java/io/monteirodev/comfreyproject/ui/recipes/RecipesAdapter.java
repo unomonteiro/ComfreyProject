@@ -25,7 +25,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
     private List<Recipe> mRecipes;
     private int selectedPosition = RecyclerView.NO_POSITION;
 
-    public RecipesAdapter(RecipesClickListener clickListener) {
+    RecipesAdapter(RecipesClickListener clickListener) {
         mClickListener = clickListener;
     }
 
@@ -42,7 +42,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
     public void onBindViewHolder(@NonNull final RecipeViewHolder holder, int position) {
         final Recipe recipe = mRecipes.get(position);
         holder.itemView.setTag(position);
-        holder.recipeName.setText(recipe.getName());
         String imageUrl = recipe.getImage();
         if (TextUtils.isEmpty(imageUrl)) {
             holder.recipeImage.setImageResource(R.drawable.wide_image_placeholder);
@@ -51,6 +50,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
                     .load(imageUrl)
                     .into(holder.recipeImage);
         }
+        holder.recipeName.setText(recipe.getName());
         Context context = holder.itemView.getContext();
         final boolean isTablet = context.getResources().getBoolean(R.bool.is_tablet);
         if (isTablet) {

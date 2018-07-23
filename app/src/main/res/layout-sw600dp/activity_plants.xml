@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".ui.recipes.RecipesActivity">
+    tools:context=".ui.plants.PlantsActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recipes_recycler_view"
+        android:id="@+id/plants_recycler_view"
         style="@style/recycler_master_style"
         tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        tools:listitem="@layout/recipes_item" />
+        tools:listitem="@layout/plants_item"/>
 
     <View
         android:id="@+id/small_divider"
@@ -19,7 +19,7 @@
         android:background="@android:color/darker_gray"/>
 
     <FrameLayout
-        android:id="@+id/recipe_details_container"
-        style="@style/container_detail_style" />
+        android:id="@+id/plant_details_container"
+        style="@style/container_detail_style"/>
 
 </LinearLayout>

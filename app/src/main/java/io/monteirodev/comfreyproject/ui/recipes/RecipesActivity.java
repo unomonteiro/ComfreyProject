@@ -65,6 +65,14 @@ public class RecipesActivity extends AppCompatActivity implements
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        if (mIsTablet && mRecipeIndex != RecyclerView.NO_POSITION) {
+            mRecyclerView.scrollToPosition(mRecipeIndex);
+        }
+    }
+
+    @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         if (mIsTablet) {
@@ -72,14 +80,6 @@ public class RecipesActivity extends AppCompatActivity implements
             outState.putInt(RECIPE_INDEX_KEY, mRecipeIndex);
             getSupportFragmentManager().putFragment(
                     outState, RECIPE_DETAILS_FRAGMENT_KEY, mRecipeDetailsFragment);
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (mIsTablet && mRecipeIndex != RecyclerView.NO_POSITION) {
-            mRecyclerView.scrollToPosition(mRecipeIndex);
         }
     }
 
@@ -113,19 +113,6 @@ public class RecipesActivity extends AppCompatActivity implements
         return newRecipes;
     }
 
-    private void setRecipeDetailsFragment(Recipe recipe) {
-        mRecipeDetailsFragment = new RecipeDetailsFragment();
-        replaceRecipeDetailsFragment(recipe);
-    }
-
-    private void replaceRecipeDetailsFragment(Recipe recipe) {
-        setTitle(String.format(getString(R.string.recipes_with_name), mRecipe.getName()));
-        mRecipeDetailsFragment.setRecipe(recipe);
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.recipe_details_container, mRecipeDetailsFragment)
-                .commit();
-    }
-
     @Override
     public void onRecipeClick(Recipe recipe, int index) {
         mRecipe = recipe;
@@ -137,5 +124,18 @@ public class RecipesActivity extends AppCompatActivity implements
             detailIntent.putExtra(RECIPE_EXTRA, recipe);
             startActivity(detailIntent);
         }
+    }
+
+    private void setRecipeDetailsFragment(Recipe recipe) {
+        mRecipeDetailsFragment = new RecipeDetailsFragment();
+        replaceRecipeDetailsFragment(recipe);
+    }
+
+    private void replaceRecipeDetailsFragment(Recipe recipe) {
+        setTitle(String.format(getString(R.string.recipes_with_name), mRecipe.getName()));
+        mRecipeDetailsFragment.setRecipe(recipe);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.recipe_details_container, mRecipeDetailsFragment)
+                .commit();
     }
 }

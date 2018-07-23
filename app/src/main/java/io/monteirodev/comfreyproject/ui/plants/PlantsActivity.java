@@ -16,13 +16,22 @@ import io.monteirodev.comfreyproject.data.Plant;
 
 import static io.monteirodev.comfreyproject.ui.plants.PlantDetailsActivity.PLANT_EXTRA;
 
-public class PlantsActivity extends AppCompatActivity implements PlantsAdapter.PlantClickListener {
+public class PlantsActivity extends AppCompatActivity implements 
+        PlantsAdapter.PlantClickListener {
+
+    private static final String PLANT_DETAILS_FRAGMENT_KEY = "PLANT_DETAILS_FRAGMENT_KEY";
+    private static final String PLANT_INDEX_KEY = "PLANT_INDEX_KEY";
+    private static final String PLANT_KEY = "PLANT_KEY";
 
     @BindView(R.id.plants_recycler_view)
     RecyclerView mRecyclerView;
 
     private PlantsAdapter mPlantsAdapter;
     private List<Plant> mPlantList;
+    private PlantDetailsFragment mPlantDetailsFragment;
+    private boolean mIsTablet;
+    private Plant mPlant;
+    private int mPlantIndex;
 
     @Override
 
@@ -36,6 +45,41 @@ public class PlantsActivity extends AppCompatActivity implements PlantsAdapter.P
         mRecyclerView.setAdapter(mPlantsAdapter);
         mPlantList = getPlants();
         mPlantsAdapter.setPlantList(mPlantList);
+        mIsTablet = getResources().getBoolean(R.bool.is_tablet);
+        if (mIsTablet) {
+            if (savedInstanceState == null) {
+                mPlantIndex = 0;
+                mPlant = mPlantList.get(mPlantIndex);
+                mPlantsAdapter.setSelectedPosition(mPlantIndex);
+                setPlantDetailsFragment(mPlant);
+            } else {
+                mPlant = savedInstanceState.getParcelable(PLANT_KEY);
+                mPlantIndex = savedInstanceState.getInt(PLANT_INDEX_KEY);
+                mPlantsAdapter.setSelectedPosition(mPlantIndex);
+                mPlantDetailsFragment = (PlantDetailsFragment) getSupportFragmentManager()
+                        .getFragment(savedInstanceState, PLANT_DETAILS_FRAGMENT_KEY);
+                replacePlantDetailsFragment(mPlant);
+            }
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mIsTablet && mPlantIndex != RecyclerView.NO_POSITION) {
+            mRecyclerView.scrollToPosition(mPlantIndex);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (mIsTablet) {
+            outState.putParcelable(PLANT_KEY, mPlant);
+            outState.putInt(PLANT_INDEX_KEY, mPlantIndex);
+            getSupportFragmentManager().putFragment(
+                    outState, PLANT_DETAILS_FRAGMENT_KEY, mPlantDetailsFragment);
+        }
     }
 
     public List<Plant> getPlants() {
@@ -47,9 +91,28 @@ public class PlantsActivity extends AppCompatActivity implements PlantsAdapter.P
     }
 
     @Override
-    public void onPlantClick(Plant plant) {
-        Intent detailIntent = new Intent(this, PlantDetailsActivity.class);
-        detailIntent.putExtra(PLANT_EXTRA, plant);
-        startActivity(detailIntent);
+    public void onPlantClick(Plant plant, int index) {
+        mPlant = plant;
+        if (mIsTablet) {
+            mPlantIndex = index;
+            setPlantDetailsFragment(plant);
+        } else {
+            Intent detailIntent = new Intent(this, PlantDetailsActivity.class);
+            detailIntent.putExtra(PLANT_EXTRA, plant);
+            startActivity(detailIntent);
+        }
+    }
+
+    private void setPlantDetailsFragment(Plant plant) {
+        mPlantDetailsFragment = new PlantDetailsFragment();
+        replacePlantDetailsFragment(plant);
+    }
+
+    private void replacePlantDetailsFragment(Plant plant) {
+        setTitle(String.format(getString(R.string.plants_with_name), mPlant.getName()));
+        mPlantDetailsFragment.setPlant(plant);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.plant_details_container, mPlantDetailsFragment)
+                .commit();
     }
 }
