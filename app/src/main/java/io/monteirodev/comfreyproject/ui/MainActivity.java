@@ -14,6 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.data.MyMenuOption;
+import io.monteirodev.comfreyproject.sync.SyncUtils;
 import io.monteirodev.comfreyproject.ui.plants.PlantsActivity;
 import io.monteirodev.comfreyproject.ui.recipes.RecipesActivity;
 
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements MenuAdapter.MenuC
         mRecyclerView.setAdapter(mMenuAdapter);
         mMyMenuOptions = getMyMenuOptions();
         mMenuAdapter.setOptions(mMyMenuOptions);
+        SyncUtils.initialise(this);
 
     }
 

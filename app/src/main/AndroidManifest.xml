@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.plants.PlantsActivity"
+        <activity
+            android:name=".ui.plants.PlantsActivity"
             android:label="@string/plants"
             android:launchMode="singleTop"
             android:parentActivityName=".ui.MainActivity">
@@ -27,41 +28,58 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.plants.PlantDetailsActivity"
-            android:theme="@style/AppTheme.SimpleCoordinatorTheme"
-            android:parentActivityName=".ui.plants.PlantsActivity">
+        <activity
+            android:name=".ui.plants.PlantDetailsActivity"
+            android:parentActivityName=".ui.plants.PlantsActivity"
+            android:theme="@style/AppTheme.SimpleCoordinatorTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.plants.PlantsActivity" />
         </activity>
-        <activity android:name=".ui.recipes.RecipesActivity"
+        <activity
+            android:name=".ui.recipes.RecipesActivity"
             android:label="@string/recipes"
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.recipes.RecipeDetailsActivity"
-            android:theme="@style/AppTheme.SimpleCoordinatorTheme"
-            android:parentActivityName=".ui.recipes.RecipesActivity">
+        <activity
+            android:name=".ui.recipes.RecipeDetailsActivity"
+            android:parentActivityName=".ui.recipes.RecipesActivity"
+            android:theme="@style/AppTheme.SimpleCoordinatorTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.recipes.RecipesActivity" />
         </activity>
-        <activity android:name=".ui.GetInvolvedActivity"
+        <activity
+            android:name=".ui.GetInvolvedActivity"
             android:label="@string/get_involved"
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.AboutActivity"
+        <activity
+            android:name=".ui.AboutActivity"
             android:label="@string/about"
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
         </activity>
+
+        <service
+            android:name=".sync.ComfreyFirebaseJobService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".sync.ComfreySyncIntentService"
+            android:exported="false"></service>
     </application>
 
 </manifest>

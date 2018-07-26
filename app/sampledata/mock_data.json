@@ -1,0 +1,36 @@
+{
+  "plants": [
+    {
+      "id": 1,
+      "name": "Sunflower"
+    },
+    {
+      "id": 2,
+      "name": "plant 2"
+    },
+    {
+      "id": 3,
+      "name": "plant 3"
+    }
+  ],
+  "recipes": [
+    {
+      "id": 1,
+      "name": "recipe A"
+    },
+    {
+      "id": 2,
+      "name": "recipe B"
+    },
+    {
+      "id": 3,
+      "name": "recipe C"
+    }
+  ],
+  "getInvolved": {
+    "donateMoney": "<!DOCTYPE html><html><p>Making a gift to the Comfrey Project can help in all sorts of ways and it's very easy to do. For instance:</p><ul><li>&pound;5 pays for travel and a shared lunch for one person </li><li>&pound;25 pays for a person to attend one weekly garden session</li><li>&pound;100 pays for an artist or cookery teacher to provide a day of workshops</li></ul><p>You can donate money online via <a href=\"http://localgiving.com/charity/thecomfreyproject\">Local Giving</a>, and can give a one-off donation, or a monthly commitment to our work.</p></html>"
+  },
+  "about": {
+    "history": "History of The Comfrey Project"
+  }
+}
