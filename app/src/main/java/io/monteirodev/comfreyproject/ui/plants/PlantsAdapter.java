@@ -85,9 +85,11 @@ public class PlantsAdapter extends RecyclerView.Adapter<PlantsAdapter.PlantViewH
 
     public void setSelectedPosition(int newPosition) {
         // Updating old as well as new positions
-        notifyItemChanged(selectedPosition);
-        selectedPosition = newPosition;
-        notifyItemChanged(selectedPosition);
+        if (newPosition != RecyclerView.NO_POSITION) {
+            notifyItemChanged(selectedPosition);
+            selectedPosition = newPosition;
+            notifyItemChanged(selectedPosition);
+        }
     }
 
     public interface PlantClickListener {

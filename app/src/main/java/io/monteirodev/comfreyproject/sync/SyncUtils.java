@@ -11,8 +11,13 @@ import com.firebase.jobdispatcher.GooglePlayDriver;
 import com.firebase.jobdispatcher.Job;
 import com.firebase.jobdispatcher.Lifetime;
 import com.firebase.jobdispatcher.Trigger;
+import com.google.android.gms.common.util.CollectionUtils;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import io.monteirodev.comfreyproject.data.Plant;
+import io.monteirodev.comfreyproject.data.database.AppDatabase;
 
 public class SyncUtils {
 
@@ -20,7 +25,7 @@ public class SyncUtils {
     private static final int DAY_IN_SECONDS = (int) TimeUnit.DAYS.toSeconds(1);
     private static final int FLEX_TIME = DAY_IN_SECONDS / 2;
 
-    public static final String COMFREY_SYNC_TAG = "comfrey-sync";
+    private static final String COMFREY_SYNC_TAG = "comfrey-sync";
 
     synchronized public static void initialise(@NonNull final Context context) {
         if (sInitialized) {
@@ -31,7 +36,7 @@ public class SyncUtils {
         checkForEmpty(context);
     }
 
-    public static void startImmediateSync(@NonNull final Context context) {
+    private static void startImmediateSync(@NonNull final Context context) {
         Intent intentToSyncImmediately = new Intent(context, ComfreySyncIntentService.class);
         context.startService(intentToSyncImmediately);
     }
@@ -57,8 +62,12 @@ public class SyncUtils {
         Thread checkForEmpty = new Thread(new Runnable() {
             @Override
             public void run() {
-                // todo query database here
-                startImmediateSync(context);
+                AppDatabase db = AppDatabase.getInstance(context.getApplicationContext());
+                // todo isEmpty for recipes, getInvolved, About
+                List<Plant> plants = db.plantsDao().getPlants();
+                if (CollectionUtils.isEmpty(plants)) {
+                    startImmediateSync(context);
+                }
             }
         });
         checkForEmpty.start();

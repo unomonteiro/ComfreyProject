@@ -8,8 +8,8 @@ import java.io.IOException;
 
 import io.monteirodev.comfreyproject.api.ComfreyClient;
 import io.monteirodev.comfreyproject.api.ComfreyInterface;
-import io.monteirodev.comfreyproject.data.AppDatabase;
 import io.monteirodev.comfreyproject.data.ComfreyData;
+import io.monteirodev.comfreyproject.data.database.AppDatabase;
 
 public class SyncTask {
     private static final String TAG = SyncTask.class.getSimpleName();
@@ -20,14 +20,14 @@ public class SyncTask {
             ComfreyInterface comfreyInterface =
                     ComfreyClient.getClient().create(ComfreyInterface.class);
 
-            ComfreyData data = comfreyInterface.getData().execute().body();
-            if (data == null) {
-                Log.d(TAG, "syncData: no data");
+            ComfreyData comfreyData = comfreyInterface.getData().execute().body();
+            if (comfreyData == null) {
+                Log.d(TAG, "syncData: no comfreyData");
             } else {
-                Log.d(TAG, "syncData: we have data!");
+                Log.d(TAG, "syncData: we have comfreyData!");
                 mDb = AppDatabase.getInstance(context.getApplicationContext());
-                mDb.plantsDao().insertPlants(data.getPlants());
-                Log.d(TAG, "syncData: data inserted in database");
+                mDb.plantsDao().insertList(comfreyData.getPlants());
+                Log.d(TAG, "syncData: comfreyData inserted in database");
             }
         } catch (IOException e) {
             Log.e(TAG, "syncData: error: " + e.getMessage(), e);
