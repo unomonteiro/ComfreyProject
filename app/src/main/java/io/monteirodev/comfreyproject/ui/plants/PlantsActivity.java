@@ -117,7 +117,7 @@ public class PlantsActivity extends AppCompatActivity implements
 
     private void replacePlantDetailsFragment(Plant plant) {
         setTitle(String.format(getString(R.string.plants_with_name), plant.getName()));
-        mPlantDetailsFragment.setPlant(plant);
+        mPlantDetailsFragment.setPlantId(plant.getId());
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.plant_details_container, mPlantDetailsFragment)
                 .commit();

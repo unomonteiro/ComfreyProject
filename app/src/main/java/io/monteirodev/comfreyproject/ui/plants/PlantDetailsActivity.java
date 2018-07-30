@@ -44,7 +44,7 @@ public class PlantDetailsActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             PlantDetailsFragment plantDetailsFragment = new PlantDetailsFragment();
-            plantDetailsFragment.setPlant(mPlant);
+            plantDetailsFragment.setPlantId(mPlant.getId());
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.plant_container, plantDetailsFragment)
                     .commit();

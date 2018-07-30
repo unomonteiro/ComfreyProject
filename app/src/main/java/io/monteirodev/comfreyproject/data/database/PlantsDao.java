@@ -17,4 +17,6 @@ public abstract class PlantsDao implements BaseDao<Plant> {
     @Query("SELECT * FROM plants ORDER BY name")
     public abstract LiveData<List<Plant>> loadPlants();
 
+    @Query("SELECT * FROM plants where id = :id")
+    public abstract LiveData<Plant> loadPlant(int id);
 }
