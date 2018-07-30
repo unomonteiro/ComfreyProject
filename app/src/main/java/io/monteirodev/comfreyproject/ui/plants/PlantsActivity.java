@@ -11,14 +11,12 @@ import android.support.v7.widget.RecyclerView;
 
 import com.google.android.gms.common.util.CollectionUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.data.Plant;
-import io.monteirodev.comfreyproject.data.database.AppDatabase;
 
 import static io.monteirodev.comfreyproject.ui.plants.PlantDetailsActivity.PLANT_EXTRA;
 import static io.monteirodev.comfreyproject.utils.UiUtils.getDeviceLayoutManager;

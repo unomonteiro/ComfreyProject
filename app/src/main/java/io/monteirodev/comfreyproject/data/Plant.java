@@ -11,11 +11,8 @@ public class Plant implements Parcelable {
     @PrimaryKey
     private int id;
     private String name;
-    @ColumnInfo(name = "image_url")
     private String imageUrl;
-    @ColumnInfo(name = "expert_name")
     private String expertName;
-    @ColumnInfo(name = "expert_picture_url")
     private String expertPictureUrl;
     private String information;
 

@@ -8,7 +8,7 @@ import android.content.Context;
 import io.monteirodev.comfreyproject.data.Plant;
 
 // todo exportSchema once in final app
-@Database(entities = {Plant.class}, version = 1, exportSchema = false)
+@Database(entities = {Plant.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final Object LOCK = new Object();
@@ -23,6 +23,7 @@ public abstract class AppDatabase extends RoomDatabase {
                 sInstance = Room
                         .databaseBuilder(context.getApplicationContext(),
                                 AppDatabase.class, COMFREY_DATABASE)
+                        .fallbackToDestructiveMigration()
                         .build();
             }
         }
