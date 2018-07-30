@@ -1,7 +1,7 @@
 package io.monteirodev.comfreyproject.ui.plants;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -27,20 +27,15 @@ public class PlantsActivity extends AppCompatActivity implements
         PlantsAdapter.PlantClickListener {
 
     private static final String PLANT_DETAILS_FRAGMENT_KEY = "PLANT_DETAILS_FRAGMENT_KEY";
-    private static final String PLANT_LIST_KEY = "PLANT_LIST_KEY";
     private static final String PLANT_INDEX_KEY = "PLANT_INDEX_KEY";
-    private static final String PLANT_KEY = "PLANT_KEY";
 
     @BindView(R.id.plants_recycler_view)
     RecyclerView mRecyclerView;
 
     private PlantsAdapter mPlantsAdapter;
-    private ArrayList<Plant> mPlantList;
     private PlantDetailsFragment mPlantDetailsFragment;
     private boolean mIsTablet;
-    private Plant mPlant;
     private int mPlantIndex;
-    private AppDatabase mDb;
 
     @Override
 
@@ -48,7 +43,6 @@ public class PlantsActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plants);
         ButterKnife.bind(this);
-        mDb = AppDatabase.getInstance(getApplicationContext());
         mIsTablet = getResources().getBoolean(R.bool.is_tablet);
         LinearLayoutManager layoutManager = getDeviceLayoutManager(this);
         if (mIsTablet) {
@@ -57,20 +51,16 @@ public class PlantsActivity extends AppCompatActivity implements
         mRecyclerView.setLayoutManager(layoutManager);
         mPlantsAdapter = new PlantsAdapter(this);
         mRecyclerView.setAdapter(mPlantsAdapter);
-        retrievePlants();
+        setupViewModel();
 
         if (mIsTablet) {
             if (savedInstanceState == null) {
                 mPlantIndex = RecyclerView.NO_POSITION;
+                mPlantDetailsFragment = new PlantDetailsFragment();
             } else {
-                mPlant = savedInstanceState.getParcelable(PLANT_KEY);
-                mPlantList = savedInstanceState.getParcelableArrayList(PLANT_LIST_KEY);
                 mPlantIndex = savedInstanceState.getInt(PLANT_INDEX_KEY);
-                mPlantsAdapter.setPlantList(mPlantList);
-                mPlantsAdapter.setSelectedPosition(mPlantIndex);
                 mPlantDetailsFragment = (PlantDetailsFragment) getSupportFragmentManager()
                         .getFragment(savedInstanceState, PLANT_DETAILS_FRAGMENT_KEY);
-                replacePlantDetailsFragment(mPlant);
             }
         }
     }
@@ -87,24 +77,24 @@ public class PlantsActivity extends AppCompatActivity implements
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         if (mIsTablet) {
-            outState.putParcelable(PLANT_KEY, mPlant);
-            outState.putParcelableArrayList(PLANT_LIST_KEY, mPlantList);
             outState.putInt(PLANT_INDEX_KEY, mPlantIndex);
             getSupportFragmentManager().putFragment(
                     outState, PLANT_DETAILS_FRAGMENT_KEY, mPlantDetailsFragment);
         }
     }
 
-    private void retrievePlants() {
-        final LiveData<List<Plant>> plants = mDb.plantsDao().loadPlants();
-        plants.observe(this, new Observer<List<Plant>>() {
+    private void setupViewModel() {
+        PlantsViewModel viewModel = ViewModelProviders.of(this).get(PlantsViewModel.class);
+        viewModel.getPlants().observe(this, new Observer<List<Plant>>() {
             @Override
             public void onChanged(@Nullable List<Plant> newPlants) {
                 mPlantsAdapter.setPlantList(newPlants);
-                if (mIsTablet && !CollectionUtils.isEmpty(newPlants) &&
-                        mPlantIndex == RecyclerView.NO_POSITION) {
+                if (mIsTablet && !CollectionUtils.isEmpty(newPlants)) {
+                    if (mPlantIndex == RecyclerView.NO_POSITION) {
+                        mPlantIndex = 0;
+                    }
                     mPlantsAdapter.setSelectedPosition(mPlantIndex);
-                    setPlantDetailsFragment(newPlants.get(0));
+                    replacePlantDetailsFragment(newPlants.get(mPlantIndex));
                 }
             }
         });
@@ -112,7 +102,6 @@ public class PlantsActivity extends AppCompatActivity implements
 
     @Override
     public void onPlantClick(Plant plant, int index) {
-        mPlant = plant;
         if (mIsTablet) {
             mPlantIndex = index;
             setPlantDetailsFragment(plant);
@@ -129,7 +118,6 @@ public class PlantsActivity extends AppCompatActivity implements
     }
 
     private void replacePlantDetailsFragment(Plant plant) {
-        mPlant = plant;
         setTitle(String.format(getString(R.string.plants_with_name), plant.getName()));
         mPlantDetailsFragment.setPlant(plant);
         getSupportFragmentManager().beginTransaction()
