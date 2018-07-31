@@ -3,17 +3,19 @@ package io.monteirodev.comfreyproject.ui.plants;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
 
-import io.monteirodev.comfreyproject.data.Plant;
+import java.util.List;
+
+import io.monteirodev.comfreyproject.data.PlantDetail;
 import io.monteirodev.comfreyproject.data.database.AppDatabase;
 
 public class PlantDetailsViewModel extends ViewModel {
-    private LiveData<Plant> plant;
+    private LiveData<List<PlantDetail>> plantDetails;
 
-    public PlantDetailsViewModel(AppDatabase db, int plantId) {
-        plant = db.plantsDao().loadPlant(plantId);
+    PlantDetailsViewModel(AppDatabase db, int plantId) {
+        plantDetails = db.plantDetailsDao().loadPlantDetails(plantId);
     }
 
-    public LiveData<Plant> getPlant() {
-        return plant;
+    public LiveData<List<PlantDetail>> getPlantDetails() {
+        return plantDetails;
     }
 }

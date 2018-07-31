@@ -21,8 +21,5 @@ public interface BaseDao<T> {
     void update(T obj);
 
     @Delete
-    void deleteAll();
-
-    @Delete
     void delete(T obj);
 }

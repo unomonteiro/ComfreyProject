@@ -19,4 +19,7 @@ public abstract class PlantsDao implements BaseDao<Plant> {
 
     @Query("SELECT * FROM plants where id = :id")
     public abstract LiveData<Plant> loadPlant(int id);
+
+    @Query("delete from plants")
+    public abstract void deleteAll();
 }

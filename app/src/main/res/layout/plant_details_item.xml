@@ -3,17 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    style="@style/card_item"
     app:cardCornerRadius="@dimen/dimen4dp"
     tools:showIn="@layout/fragment_plant_details">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/expert_image_view"
+            android:id="@+id/detail_image_view"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_marginBottom="8dp"
@@ -24,10 +23,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@tools:sample/avatars"
+            tools:visibility="visible"/>
 
         <TextView
-            android:id="@+id/expert_title_text_view"
+            android:id="@+id/detail_title_text_view"
             style="@style/Base.TextAppearance.AppCompat.Subhead"
             android:layout_width="0dp"
             android:layout_height="28dp"
@@ -36,23 +36,24 @@
             android:layout_marginTop="8dp"
             android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/expert_image_view"
+            app:layout_constraintStart_toEndOf="@+id/detail_image_view"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginStart="@dimen/dimen16dp"
             tools:text="@tools:sample/full_names" />
 
         <TextView
-            android:id="@+id/expert_body_text_view"
-            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:id="@+id/detail_body_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginBottom="8dp"
             android:gravity="center_vertical"
+            android:autoLink="all"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/expert_title_text_view"
-            app:layout_constraintStart_toStartOf="@id/expert_title_text_view"
-            app:layout_constraintTop_toBottomOf="@+id/expert_title_text_view"
-            tools:text="@string/lorem_expert" />
+            app:layout_constraintEnd_toEndOf="@+id/detail_title_text_view"
+            app:layout_constraintStart_toStartOf="@id/detail_title_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/detail_title_text_view"
+            tools:text="@string/lorem_m" />
 
     </android.support.constraint.ConstraintLayout>
 

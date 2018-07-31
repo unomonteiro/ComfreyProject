@@ -7,11 +7,11 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.List;
 
@@ -19,31 +19,21 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import io.monteirodev.comfreyproject.R;
-import io.monteirodev.comfreyproject.data.Plant;
+import io.monteirodev.comfreyproject.data.PlantDetail;
 import io.monteirodev.comfreyproject.data.database.AppDatabase;
 
 public class PlantDetailsFragment extends Fragment {
 
     private static final String KEY_PLANT_ID = "key_plant_id";
 
-    @BindView(R.id.expert_image_view)
-    ImageView mExpertImageView;
-    @BindView(R.id.expert_title_text_view)
-    TextView mExpertNameTextView;
-    @BindView(R.id.expert_body_text_view)
-    TextView mExpertBodyTextView;
+    @BindView(R.id.plant_details_recycler_view)
+    RecyclerView mRecyclerView;
 
-    @BindView(R.id.info_body_text_view)
-    TextView mInfoBodyTextView;
-    @BindView(R.id.benefits_body_text_view)
-    TextView mBenefitsBodyTextView;
-    @BindView(R.id.care_body_text_view)
-    TextView mCareBodyTextView;
+    PlantDetailsAdapter mPlantDetailsAdapter;
 
     private int mPlantId = -1;
     private Unbinder unbinder;
     private AppDatabase mDb;
-
 
     public PlantDetailsFragment() {
         // Required empty public constructor
@@ -57,6 +47,9 @@ public class PlantDetailsFragment extends Fragment {
         if (savedInstanceState != null) {
             mPlantId = savedInstanceState.getInt(KEY_PLANT_ID, -1);
         }
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mPlantDetailsAdapter = new PlantDetailsAdapter();
+        mRecyclerView.setAdapter(mPlantDetailsAdapter);
 
         setupViewModel();
 
@@ -75,25 +68,15 @@ public class PlantDetailsFragment extends Fragment {
     }
 
     private void subscribeToModel(final PlantDetailsViewModel model) {
-        model.getPlant().observe(this, new Observer<Plant>() {
+        model.getPlantDetails().observe(this, new Observer<List<PlantDetail>>() {
             @Override
-            public void onChanged(@Nullable Plant plant) {
-                model.getPlant().removeObserver(this);
-                if (plant != null) {
-                    populateUI(plant);
+            public void onChanged(@Nullable List<PlantDetail> plantDetails) {
+                model.getPlantDetails().removeObserver(this);
+                if (plantDetails != null) {
+                    mPlantDetailsAdapter.setDetailList(plantDetails);
                 }
             }
         });
-    }
-
-    private void populateUI(@NonNull Plant plant) {
-        // todo use plantDetails
-        mExpertNameTextView.setText(plant.getName());
-        mExpertImageView.setImageResource(R.drawable.profile_placeholder);
-        mExpertBodyTextView.setText(R.string.lorem_expert);
-        mInfoBodyTextView.setText(R.string.lorem_m);
-        mBenefitsBodyTextView.setText(R.string.lorem_m);
-        mCareBodyTextView.setText(R.string.lorem_l);
     }
 
     @Override

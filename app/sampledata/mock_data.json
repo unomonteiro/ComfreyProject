@@ -2,15 +2,45 @@
   "plants": [
     {
       "id": 1,
-      "name": "Sunflower"
+      "name": "Sunflower",
+      "details": [
+        {
+          "title": "Sun title1",
+          "body": "Sun body1",
+          "imageUrl": "@drawable/profile_placeholder"
+        },
+        {
+          "title": "Sun title2",
+          "body": "Sun body2",
+          "imageUrl": "https://dl.dropboxusercontent.com/s/jyz4bj2dwrry3nf/profile_placeholder.png"
+        }
+      ]
     },
     {
       "id": 2,
-      "name": "plant 2"
+      "name": "Girasol",
+      "details": [
+        {
+          "title": "Gira title1",
+          "body": "Gira body1",
+          "imageUrl": "@drawable/profile_placeholder"
+        },
+        {
+          "title": "Gira title2",
+          "body": "Gira body2",
+          "imageUrl": ""
+        }
+      ]
     },
     {
       "id": 3,
-      "name": "plant 3"
+      "name": "plant 3",
+      "expertName": "plant 3"
+    },
+    {
+      "id": 4,
+      "name": "plant 4",
+      "expertName": "plant 4"
     }
   ],
   "recipes": [
