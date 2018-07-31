@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -50,8 +51,7 @@ public class PlantDetailsAdapter extends RecyclerView.Adapter<PlantDetailsAdapte
 
         holder.titleTextView.setText(detail.getTitle());
 
-        Spanned bodyText = fromHtml(detail.getBody());
-        holder.bodyTextView.setText(bodyText, TextView.BufferType.SPANNABLE );
+        holder.bodyTextView.loadData(detail.getBody(), "text/html", null);
     }
 
     @Override
@@ -72,8 +72,8 @@ public class PlantDetailsAdapter extends RecyclerView.Adapter<PlantDetailsAdapte
         ImageView imageView;
         @BindView(R.id.detail_title_text_view)
         TextView titleTextView;
-        @BindView(R.id.detail_body_text_view)
-        TextView bodyTextView;
+        @BindView(R.id.detail_body_web_view)
+        WebView bodyTextView;
 
         DetailViewHolder(View itemView) {
             super(itemView);

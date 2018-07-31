@@ -34,21 +34,22 @@
             android:layout_marginEnd="16dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:paddingStart="@dimen/dimen8dp"
+            android:paddingEnd="@dimen/dimen8dp"
             android:maxLines="1"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/detail_image_view"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_goneMarginStart="@dimen/dimen16dp"
             tools:text="@tools:sample/full_names" />
 
-        <TextView
-            android:id="@+id/detail_body_text_view"
+        <WebView
+            android:id="@+id/detail_body_web_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginBottom="8dp"
             android:gravity="center_vertical"
-            android:autoLink="all"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/detail_title_text_view"
             app:layout_constraintStart_toStartOf="@id/detail_title_text_view"
