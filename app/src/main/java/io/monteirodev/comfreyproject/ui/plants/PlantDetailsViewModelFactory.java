@@ -11,7 +11,7 @@ public class PlantDetailsViewModelFactory extends ViewModelProvider.NewInstanceF
     private final AppDatabase mDb;
     private final int mPlantId;
 
-    public PlantDetailsViewModelFactory(AppDatabase db, int plantId) {
+    PlantDetailsViewModelFactory(AppDatabase db, int plantId) {
         mDb = db;
         mPlantId = plantId;
     }

@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -85,7 +87,8 @@ public class PlantDetailsFragment extends Fragment {
     }
 
     private void populateUI(@NonNull Plant plant) {
-        mExpertNameTextView.setText(plant.getExpertName());
+        // todo use plantDetails
+        mExpertNameTextView.setText(plant.getName());
         mExpertImageView.setImageResource(R.drawable.profile_placeholder);
         mExpertBodyTextView.setText(R.string.lorem_expert);
         mInfoBodyTextView.setText(R.string.lorem_m);
