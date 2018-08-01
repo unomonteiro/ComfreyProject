@@ -2,45 +2,165 @@
   "plants": [
     {
       "id": 1,
-      "name": "Sunflower",
+      "name": "Beetroot",
+      "imageUrl": "https://dl.dropboxusercontent.com/s/zsnk0qgdkhq6aho/beetroot.jpg",
       "details": [
         {
-          "title": "Sun title1",
-          "body": "Sun body1",
-          "imageUrl": "@drawable/profile_placeholder"
+          "imageUrl": null,
+          "title": "Beetroot (Beta vulgaris)",
+          "body": "Beetroot is herbaceous plant that belongs to the family Amaranthaceae, the same family as chard and spinach. Typically a rich purple colour, beetroot can also be white or golden.<br>This plant originates from India, Mediterranean areas and the Atlantic coast of Europe, but it can be found all over the world today.<br>Due to its high sugar content, beetroot is delicious eaten raw but is more typically cooked or pickled. The heart-shaped leaves of beetroot are also edible and taste similarly to spinach."
         },
         {
-          "title": "Sun title2",
-          "body": "Sun body2",
-          "imageUrl": "https://dl.dropboxusercontent.com/s/jyz4bj2dwrry3nf/profile_placeholder.png"
+          "imageUrl": null,
+          "title": "Interesting Facts",
+          "body": "<ul><li>Beetroot can be also used for the manufacture of wine.</li><li>Beetroot was popular “mouth freshener” in the past and it was used to eliminate the smell of garlic.</li><li>Beetroot juice has been extensively used as a dye over the centuries and during the 19th century, women even used beetroot for dyeing their hair.</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Benefits",
+          "body": "Beetroots have exceptionally high nutritional value, they are full of vitamins and minerals and packed with powerful antioxidants. Red beetroots in fact have been ranked as one of the 10 most potent antioxidant vegetables! Beetroots are an excellent source of folic acid and a very good source of fibre, manganese and potassium. Its heart-shaped leaves, rich in calcium, iron and vitamins A and C, can be cooked up and enjoyed in the same way as spinach. Beetroot fibre has been shown to increase the number of white blood cells, which are responsible for detecting and eliminating abnormal cells."
+        },
+        {
+          "imageUrl": null,
+          "title": "Growing Beetroots",
+          "body": "Beetroot prefer to be grown in moist, fertile soil in a sunny spot, but will also thrive in raised beds or pots. Although early sowings can be made from late winter, raising plants can be tricky, so for foolproof beetroot, sow seeds directly into the soil from mid-spring."
         }
       ]
     },
     {
       "id": 2,
-      "name": "Girasol",
+      "name": "Courgette",
+      "imageUrl": "https://dl.dropboxusercontent.com/s/h72guw6tat4u06v/courgette.jpg",
       "details": [
         {
-          "title": "Gira title1",
-          "body": "Gira body1",
-          "imageUrl": "@drawable/profile_placeholder"
+          "imageUrl": null,
+          "title": "Courgette (Cucurbita pepo var. cylindrica)",
+          "body": "The courgette (or zucchini) is part of the Cucurbitaceae family and it’s native to Central America and Mexico. Courgette is grown year-round. Even though it is a fruit, it is usually cooked as a vegetable. It can however be eaten raw and it’s particularly nice when shredded and added onto a cold salad.<br>Courgettes are extremely easy to grow and produce a lot of harvest: expect three or four a week!"
         },
         {
-          "title": "Gira title2",
-          "body": "Gira body2",
-          "imageUrl": ""
+          "title": "Tips",
+          "body": "<ul><li>Courgettes are easy to grow from seed. They are best started off indoors in pots, but you can also sow them outdoors depending on the weather where you live.</li><li>For earlier crops or in cold regions sow seeds indoors from mid- to late April at 18-21°C. To sow outdoors, do so in late May/early June and cover with a protective material for at least couple of weeks.</li><li>Courgettes are hungry plants and will benefit from a rich soil. Be aware the roots of the plant will spread as much as the foliage so the soil need to be fertilized to that distance. Sprinkle some seaweed / poultry manure pellets a metre around the planting hole.</li></ul>",
+          "imageUrl": null
+        },
+        {
+          "imageUrl": null,
+          "title": "Interesting Facts",
+          "body": "<ul><li>The flower of the Courgette plant is also edible.</li><li>The courgette was one of Columbus’ discoveries.</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Benefits",
+          "body": "Courgettes contain very few calories and have a high water content, which makes them a dieter’s friend. They provide useful amounts of vitamin C which helps boost the immune system, as well as, potassium, which is key to controlling blood pressure. A courgette has more potassium than a banana."
         }
       ]
     },
     {
       "id": 3,
-      "name": "plant 3",
-      "expertName": "plant 3"
+      "name": "Mint",
+      "imageUrl": "https://dl.dropboxusercontent.com/s/shftf2p54ynnp5d/mint.jpg",
+      "details": [
+        {
+          "imageUrl": null,
+          "title": "Mint (Mentha)",
+          "body": "Mint is a perennial herb grown for its leaves, originating in the Mediterranean region. It is an extremely versatile plant used in cooking, to make a refreshing tea and as an ingredient in various products, particularly toothpaste, breath and air-fresheners and chewing gyms.<br>There are many different varieties of mint to choose from with leaves that smell completely different."
+        },
+        {
+          "imageUrl": null,
+          "title": "Tips",
+          "body": "<ul><li>Give plants plenty of water, especially during hot, dry weather.</li><li>When plants have finished flowering in summer, cut flowered shoots back to 5cm (2in) above the surface of the compost.</li><li>Avoid growing different varieties of mint close together, whether in pots or the ground, as they can lose their individual scent and flavour.</li><li>When growing in pots, rejuvenate congested clumps by upturning the container, removing the root ball and splitting it in half. Repot a portion in the same container using fresh compost.</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Interesting Facts",
+          "body": "<ul><li>Mint belongs to one of the most aromatic culinary herbs family, the Lamiaceae or Labiatae, with other famous “relatives” including: basil, rosemary, sage, savory, marjoram, oregano, hyssop, thyme, lavender, and perilla.</li><li>Ancient Romans, Hebrews and Greeks used mint to flavour cordials and fruit compotes also for baths, perfumes and as a room air freshener. Mint has been found in Egyptian tombs from as far back as 1000 BC!</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Benefits",
+          "body": "It is an herb that has been used for hundreds of years for its remarkable medicinal properties. Mint has one of the highest antioxidant capacities of any food.<br>Mint contains menthol, a natural aromatic decongestant that helps to break up phlegm and mucus. Mint is a calming and soothing herb that has been used for thousands of years to aid with upset stomach or indigestion."
+        }
+      ]
     },
     {
       "id": 4,
-      "name": "plant 4",
-      "expertName": "plant 4"
+      "name": "Tomato",
+      "imageUrl": "https://dl.dropboxusercontent.com/s/o4522p6o5mfw2oa/tomatoes.jpg",
+      "details": [
+        {
+          "imageUrl": null,
+          "title": "Tomato (Solanum lycopersicum)",
+          "body": "Tomatoes belong to the family of Nightshade, or Solanaceae and they are fruits, not vegetables, they have seeds.<br>Tomatoes originated in the South American Andes around the area of modern day Peru.<br>Most tomatoes we eat are red. However, other colors are possible: green, yellow, orange, pink, black, brown, purple or even white. There are more than 10,000 tomato varieties grown around the world!<br>Tomatoes are easy to grow and a couple of plants will produce hundreds of fruit from mid Summer right through to early Autumn."
+        },
+        {
+          "imageUrl": null,
+          "title": "Interesting Facts",
+          "body": "<ul><li>While tomatoes are perfectly safe and healthy to eat, their leaves are actually toxic!</li><li>They were first brought to Europe in the mid 1500’s; the French first called them “apple of love” and the Germans “apple of Paradise”!</li><li>Tomato derives from its original name ‘xitomatl’ in the Nahuatl (Aztec) language; it translates to “plump thing with a navel”!</li><li>Tomatoes can keep longer if you store them with their stem down.</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Benefits",
+          "body": "Tomatoes are rich in lycopene, an antioxidant that is good for the heart and effective against certain cancers. Cooked tomatoes are actually better for you than raw ones, as more beneficial chemicals are released. Tomatoes are also packed with vitamins A and C, calcium, potassium."
+        },
+        {
+          "imageUrl": null,
+          "title": "Tips:",
+          "body": "<ul><li>Sow the seeds from late March to early April if you will be growing the plants outdoors or from late February to mid-March if you are planning on growing your tomatoes in a greenhouse.</li><li>Sow in small pots indoors. The young seedlings need to be kept at around 18°C.  Transplant into 9cm pots when two true leaves have formed. When the flowers of the first truss are beginning to open, transfer to 23cm pots.</li><li>Tie the main stem to a vertical bamboo cane or wind it round a sturdy string.</li><li>Remove the sideshoots regularly when they are about 2.5cm long.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Potato",
+      "imageUrl": "https://dl.dropboxusercontent.com/s/0pig8kx956raq25/potatoes.jpg",
+      "details": [
+        {
+          "imageUrl": null,
+          "title": "Potato (Solanaceae)",
+          "body": "The potato, of the Solanaceae family, originated in the area of present-day southern Peru and extreme north-western Bolivia. It was domesticated approximately 7,000–10,000 years ago and today consists the world’s fourth food staple – after corn, wheat and rice.<br>It’s a hugely versatile and a staple ingredient of many meals in one form or another - boiled, mashed, chipped or baked."
+        },
+        {
+          "imageUrl": null,
+          "title": "Tips",
+          "body": "Potatoes are classified as being either earlies or maincrops. Early varieties (‘new potatoes’) are ready to harvest much sooner and Maincrop varieties have a better yield and produce larger potatoes.<ul><li>Plant earlies around late March to early/mid-April, and Maincrops mid- to late April.</li><li>Potatoes need a sunny site away from frost pockets - the newly emerging foliage is susceptible to frost damage in April and May.</li><li>Keep crops well-watered in dry weather.</li><li>Prepare the ground the previous autumn or winter by digging in organic matter such as well-rotted animal manure.</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Interesting Facts",
+          "body": "<ul><li>Green potatoes are poisonous.</li><li>Potatoes were the first vegetable grown in space.</li><li>The introduction of the potato is estimated to have been greatly responsible for a quarter of the growth in world population and urbanization between 1700 and 1900!</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Benefits",
+          "body": "Potatoes are an excellent source of vitamin C and a good source of potassium and vitamin B6. It’s also fat, sodium and cholesterol-free."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Spinach",
+      "imageUrl": "https://dl.dropboxusercontent.com/s/c7prwsf9g1j53ax/spinach.jpg",
+      "details": [
+        {
+          "imageUrl": null,
+          "title": "Spinach (Spinacia oleracea)",
+          "body": "Spinach is a leafy crop belonging to the Chenopodiaceae family of plants, which is also known as the goosefoot family as the leaves look like the feet of a goose!<br>Spinach is a native plant of Persia (modern day Iran). It was most probably brought to Europe in about the 12th century.<br>Spinach can be grown to produce a crop all year round, making it a useful vegetable to grow when other greens might be in short supply."
+        },
+        {
+          "imageUrl": null,
+          "title": "Benefits",
+          "body": "Spinach is full of vitamins and minerals, including vitamin K, vitamin A, manganese, folate, magnesium, iron, copper, vitamin B2, vitamin B6, vitamin E, calcium, potassium, and vitamin C. In addition it contains 5.36 grams of protein per cup (cooked), making it one of the most protein-rich vegetables available.<br>Just half a cup of raw spinach counts as 1 of the 5 servings of fruits and vegetables you should eat a day.<br>Spinach is best eaten fresh; it loses nutritional properties with each passing day."
+        },
+        {
+          "imageUrl": null,
+          "title": "Interesting Facts",
+          "body": "<ul><li>In the 1930’s U.S. spinach growers credited Popeye with a 33% increase in domestic spinach consumption.</li><li>Medieval artists extracted green pigment from spinach to use as an ink or paint.</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Tips",
+          "body": "<ul><li>Some cultivars can be overwintered for an early spring harvest. Winter cultivars need a sunny position, but summer types benefit from a little shade.</li><li>Sow winter varieties at the beginning of September (summer varieties mid- March to the end of May).</li><li>Spinach prefers to grow in soil where there has been lots of organic matter (e.g. compost, well-rotted manure) added and is well drained.</li></ul>"
+        }
+      ]
     }
   ],
   "recipes": [

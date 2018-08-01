@@ -23,6 +23,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:paddingTop">@dimen/dimen8dp</item>
         <item name="android:paddingBottom">@dimen/dimen8dp</item>
+        <item name="android:clipToPadding">false</item>
     </style>
 
     <style name="card_item">
@@ -35,6 +36,35 @@
         <item name="android:clickable">@bool/is_tablet</item>
         <item name="android:focusable">@bool/is_tablet</item>
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="detail_image_style">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:contentDescription">@string/image_content_description</item>
+    </style>
+
+    <style name="detail_title_style" parent="Base.TextAppearance.AppCompat.Title">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:paddingEnd">@dimen/dimen8dp</item>
+        <item name="android:paddingStart">@dimen/dimen8dp</item>
+    </style>
+
+    <style name="detail_body_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
 </resources>
