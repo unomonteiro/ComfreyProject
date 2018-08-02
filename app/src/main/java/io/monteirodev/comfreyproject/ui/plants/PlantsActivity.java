@@ -36,7 +36,6 @@ public class PlantsActivity extends AppCompatActivity implements
     private int mPlantIndex;
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plants);

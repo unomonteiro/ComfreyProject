@@ -46,26 +46,26 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         }
 
         setSupportActionBar(mToolbar);
-        ActionBar supportActionBar = getSupportActionBar();
-        if (supportActionBar != null) {
-            supportActionBar.setDisplayHomeAsUpEnabled(true);
-            supportActionBar.setTitle(mRecipe.getName());
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle(mRecipe.getName());
         }
         mCollapsingToolbarLayout.setTitle(mRecipe.getName());
 
         if (savedInstanceState == null) {
             RecipeDetailsFragment recipeDetailsFragment = new RecipeDetailsFragment();
-            recipeDetailsFragment.setRecipe(mRecipe);
+            recipeDetailsFragment.setRecipeId(mRecipe.getId());
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.recipe_container, recipeDetailsFragment)
                     .commit();
         }
 
-        if (TextUtils.isEmpty(mRecipe.getImage())) {
+        if (TextUtils.isEmpty(mRecipe.getImageUrl())) {
             mRecipeImageView.setImageResource(R.drawable.wide_image_placeholder);
         } else {
             GlideApp.with(this)
-                    .load(mRecipe.getImage())
+                    .load(mRecipe.getImageUrl())
                     .into(mRecipeImageView);
         }
     }

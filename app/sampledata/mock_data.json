@@ -161,6 +161,136 @@
           "body": "<ul><li>Some cultivars can be overwintered for an early spring harvest. Winter cultivars need a sunny position, but summer types benefit from a little shade.</li><li>Sow winter varieties at the beginning of September (summer varieties mid- March to the end of May).</li><li>Spinach prefers to grow in soil where there has been lots of organic matter (e.g. compost, well-rotted manure) added and is well drained.</li></ul>"
         }
       ]
+    },
+    {
+      "id": 7,
+      "name": "Aubergine",
+      "imageUrl": "https://dl.dropboxusercontent.com/s/6wwv9eqz2n49y3w/aubergine.png",
+      "details": [
+        {
+          "imageUrl": null,
+          "title": "Aubergine (Solanum melongena)",
+          "body": "The fruit is widely used in cooking. Aubergines were cultivated in China and India in the 5th century, but it was not introduced in Southern Europe until the 12th century. The producing countries comprise the Mediterranean area, China and Japan."
+        },
+        {
+          "imageUrl": null,
+          "title": "Interesting facts",
+          "body": "<ul><li>In 13th-century Italian traditional folklore, the eggplant was thought to cause insanity, and in 19th-century Egypt, insanity was said to be \"more common and violent\" when the eggplant was in season!</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Benefits",
+          "body": "Aubergines are an excellent source of dietary fibre. In addition it is high in minerals, such as copper, magnesium and manganese. They are also a good source of vitamins B1 and B6 and potassium."
+        },
+        {
+          "imageUrl": null,
+          "title": "Growing Aubergines",
+          "body": "<ul><li>Although aubergines can be grown outside, they rarely do well except in mild areas or during very good summers.</li><li>Sow in January if you have a heated greenhouse and February for an unheated greenhouse.</li><li>When plants are 30cm (12in) high, remove the tip from the main stem.</li><li>Aubergines – like peppers, tomatoes and potatoes – are members of the Solanaceae family so consider your crop rotation and site them in an area where these plants have not been grown in the past two years.</li><li>Prepare the soil by digging it in winter and adding plenty of compost or well-rotted manure to enrich it.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Couve",
+      "imageUrl": "https://dl.dropboxusercontent.com/s/31zlblicrgig84u/couve.jpg",
+      "details": [
+        {
+          "imageUrl": null,
+          "title": "Couve (Collard Greens)",
+          "body": "The plants are grown for their large, dark-colored, edible leaves and as a garden ornamental, mainly in Brazil, Portugal, the southern United States, many parts of Africa, the Balkans, northern Spain, and Kashmir.<br><br>They are available year-round, but are tastier and more nutritious in the cold months.<br><br>Collard greens are members of the underrated cabbage family, Brassica oleracea."
+        },
+        {
+          "imageUrl": null,
+          "title": "Interesting facts",
+          "body": "<ul><li>In Portuguese and Brazilian cuisine, collard greens (or couve) is a common accompaniment to fish and meat dishes.</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Benefits",
+          "body": "<ul><li>Like kale, collard greens contain substantial amounts of vitamin K in a 100 gram serving.</li><li>Collard greens are rich sources of vitamin A, vitamin C, and manganese, and moderate sources of calcium and vitamin B6.</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Growing Couve",
+          "body": "<ul><li>Farmers plant collard greens usually two times per year: early in the spring and during the summer.</li><li>Collard greens propagates via seed.</li><li>Collard greens produces dry fruit which splits to release numerous, small seed.</li><li>Harvest takes place 6 to 8 weeks after sowing.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Garlic",
+      "imageUrl": "https://dl.dropboxusercontent.com/s/7yo9ngcwx4gmpyo/garlic.png",
+      "details": [
+        {
+          "imageUrl": null,
+          "title": "Garlic (Allium sativum)",
+          "body": "Garlic is a fundamental component in many or most dishes of various regions, including eastern Asia, South Asia, Southeast Asia, the Middle East, northern Africa, southern Europe, and parts of Latin America. In 2016, world production of garlic was 26.6 million tones!<br><br>Garlic is easy to grow and can be grown year-round in mild climates."
+        },
+        {
+          "imageUrl": null,
+          "title": "Interesting facts",
+          "body": "<ul><li>The psychological term for fear of garlic is Alliumphobia.</li><li>In ancient Greece, brides carried bouquets of herbs and garlic, not flowers.</li><li>You can use garlic to make glue! The sticky juice in garlic cloves is often used as an adhesive for delicate projects.</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Benefits",
+          "body": "Some of the many health benefits of garlic include:<br>Garlic has profound effects on lowering blood pressure, it successfully kills a wide range of bacteria that cause infections but also has the capacity to prevent infections from occurring in the first place. It also possesses anti-fungal and anti-viral properties, making it an all-round immunity booster.<br>The use of garlic for its cholesterol reducing effects is one of its most popular roles across the world, and is something it does fairly well; being able to reduce serum LDL by as much as 10-15%."
+        },
+        {
+          "imageUrl": null,
+          "title": "Growing Garlic",
+          "body": "<ul><li>Hoeing weeds risks damaging developing bulbs so hand weeding when weeds are small is preferable.</li><li>During spring and early summer watering during dry spells will improve yields. But don’t water once the bulbs are large and well-formed, as this could encourage rotting.</li><li>Yellowing foliage is a sign that bulbs are reaching this stage of maturity.</li><li>Snip off any flowers that form.</li><li>Buy bulbs from a garden centre or mail order supplier. Avoid those from the supermarket – they may carry disease and not be suited to the climate.</li><li>Garlic needs a chilling period so is best planted in late autumn or early winter.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Onion",
+      "imageUrl": "https://dl.dropboxusercontent.com/s/kpnu9hcwogce6h6/onion.png",
+      "details": [
+        {
+          "imageUrl": null,
+          "title": "Onion (Allium Cepa)",
+          "body": "The onion is a biennial plant belonging to the Amaryllidaceous family. It’s cultivated and used around the world. As a food item, onions are usually served cooked but can also be eaten raw or used to make pickles or chutneys. Food uses of onion date back thousands of years in China, Egypt and Persia."
+        },
+        {
+          "imageUrl": null,
+          "title": "Interesting facts",
+          "body": "<ul><li>Ancient Egyptians worshipped onions; in fact, onions were often placed in the burial tombs of pharoahs, as they were believed to bring about prosperity in the afterlife.</li><li>In the Middle Ages, onions were an acceptable form of currency, and was used to pay for rent, goods and services — and even as gifts!</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Benefits",
+          "body": "Onions are often characterized as ‘super-foods’ because they are full of antioxidants, multiple vitamins and minerals. They are a good source of vitamin B6, vitamin B9, vitamin C, folate, and potassium. There are multiple phytonutrients that are found in onions. As a result the benefits of onions span from having strong detoxifying, as well as, anti-fungal and antimicrobial properties, to being able to boost our immune system, aiding with digestion and management of anaemia and diabetes, to mention a few.<br><br>Raw, fresh cut or ground onion has the best influence on the health. If you cannot stand its smell and you must cook it, you will need to use at least four onions to achieve the same effect."
+        },
+        {
+          "imageUrl": null,
+          "title": "Tips",
+          "body": "<ul><li>Onions can be grown from onion sets or bulbs (immature onions) and planted either in late autumn for overwintering for the earliest possible summer crop, or sown in early spring. Alternatively it is possible, although harder, to grow onions from seed.</li><li>Onions do not require constant watering. Some people even say that too much watering can spoil their flavour. In normal summer weather I will leave them to grow naturally. In prolonged absence of summer rain showers, I may give them a good soaking to tide them over (every 10 days or so). In extreme hot weather they may need watering every 3 or 4 days.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Thyme",
+      "imageUrl": "https://dl.dropboxusercontent.com/s/4u56p3lxozprrx8/thyme.jpg",
+      "details": [
+        {
+          "imageUrl": null,
+          "title": "Thyme (Thymus)",
+          "body": "Thyme is of the genus Thymus of the mint family (Lamiaceae), and a relative of the oregano genus Organum.<br><br>A native of Southern Europe, thyme is now grown the world over from Africa to Russia - it proves its versatility and it certainly deserves a place in your garden."
+        },
+        {
+          "imageUrl": null,
+          "title": "Interesting facts",
+          "body": "<ul><li>The ancient Greeks used it in their baths and burnt it as incense in their temples, believing it was a source of courage.</li><li>The spread of thyme throughout Europe was thought to be due to the Romans, as they used it to purify their rooms and to give an aromatic flavor to cheese and liqueurs.</li><li>In the European middle Ages, the herb was placed beneath pillows to aid sleep and ward off nightmares.</li></ul>"
+        },
+        {
+          "imageUrl": null,
+          "title": "Growing Thyme",
+          "body": "<ul><li>Thyme likes a well-drained light soil, it should not be too rich in nutrients which will only make the plant 'leggy' and loose its compact shape.</li><li>Being a native of the Mediterranean it needs a place in full sun.</li><li>It is generally planted in the spring, and thereafter grows as a perennial. It can be propagated by seed, cuttings, or dividing rooted sections of the plan.</li></ul>"
+        }
+      ]
     }
   ],
   "recipes": [
@@ -178,9 +308,21 @@
     }
   ],
   "getInvolved": {
-    "donateMoney": "<!DOCTYPE html><html><p>Making a gift to the Comfrey Project can help in all sorts of ways and it's very easy to do. For instance:</p><ul><li>&pound;5 pays for travel and a shared lunch for one person </li><li>&pound;25 pays for a person to attend one weekly garden session</li><li>&pound;100 pays for an artist or cookery teacher to provide a day of workshops</li></ul><p>You can donate money online via <a href=\"http://localgiving.com/charity/thecomfreyproject\">Local Giving</a>, and can give a one-off donation, or a monthly commitment to our work.</p></html>"
+    "details": [
+      {
+        "imageUrl": null,
+        "title": "Donate Money",
+        "body": "<!DOCTYPE html><html><p>Making a gift to the Comfrey Project can help in all sorts of ways and it's very easy to do. For instance:</p><ul><li>&pound;5 pays for travel and a shared lunch for one person </li><li>&pound;25 pays for a person to attend one weekly garden session</li><li>&pound;100 pays for an artist or cookery teacher to provide a day of workshops</li></ul><p>You can donate money online via <a href=\"http://localgiving.com/charity/thecomfreyproject\">Local Giving</a>, and can give a one-off donation, or a monthly commitment to our work.</p></html>"
+      }
+    ]
   },
   "about": {
-    "history": "History of The Comfrey Project"
+    "details": [
+      {
+        "imageUrl": null,
+        "title": "History",
+        "body": "Some looong history about the Comfrey Project"
+      }
+    ]
   }
 }

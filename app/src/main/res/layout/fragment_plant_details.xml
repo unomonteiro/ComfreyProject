@@ -11,6 +11,6 @@
         android:id="@+id/plant_details_recycler_view"
         style="@style/recycler_style"
         tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        tools:listitem="@layout/plant_details_item"/>
+        tools:listitem="@layout/details_item"/>
 
 </FrameLayout>

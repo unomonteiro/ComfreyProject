@@ -14,13 +14,15 @@ public class Plant implements Parcelable {
     private int id;
     private String name;
     private String imageUrl;
+    private int recipeId;
     @Ignore
     private ArrayList<PlantDetail> details;
 
-    public Plant(int id, String name, String imageUrl) {
+    public Plant(int id, String name, String imageUrl, int recipeId) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
+        this.recipeId = recipeId;
     }
 
     public int getId() {
@@ -35,6 +37,10 @@ public class Plant implements Parcelable {
         return imageUrl;
     }
 
+    public int getRecipeId() {
+        return recipeId;
+    }
+
     public ArrayList<PlantDetail> getDetails() {
         return details;
     }
@@ -43,6 +49,7 @@ public class Plant implements Parcelable {
         id = in.readInt();
         name = in.readString();
         imageUrl = in.readString();
+        recipeId = in.readInt();
     }
 
     @Override
@@ -50,6 +57,7 @@ public class Plant implements Parcelable {
         dest.writeInt(id);
         dest.writeString(name);
         dest.writeString(imageUrl);
+        dest.writeInt(recipeId);
     }
 
     @Override

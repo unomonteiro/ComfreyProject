@@ -5,23 +5,23 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "plantDetails",
-        foreignKeys = {@ForeignKey(entity = Plant.class,
+@Entity(tableName = "recipeDetails",
+        foreignKeys = {@ForeignKey(entity = Recipe.class,
                 parentColumns = "id",
-                childColumns = "plantId",
+                childColumns = "recipeId",
                 onDelete = ForeignKey.CASCADE)},
-        indices = {@Index(value = "plantId")})
-public class PlantDetail implements Detail {
+        indices = {@Index(value = "recipeId")})
+public class RecipeDetail implements Detail {
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private int plantId;
+    private int recipeId;
     private String title;
     private String body;
     private String imageUrl;
 
-    public PlantDetail(int id, int plantId, String title, String body, String imageUrl) {
+    public RecipeDetail(int id, int recipeId, String title, String body, String imageUrl) {
         this.id = id;
-        this.plantId = plantId;
+        this.recipeId = recipeId;
         this.title = title;
         this.body = body;
         this.imageUrl = imageUrl;
@@ -31,8 +31,8 @@ public class PlantDetail implements Detail {
         return id;
     }
 
-    public int getPlantId() {
-        return plantId;
+    public int getRecipeId() {
+        return recipeId;
     }
 
     public String getTitle() {
@@ -47,7 +47,7 @@ public class PlantDetail implements Detail {
         return imageUrl;
     }
 
-    public void setPlantId(int plantId) {
-        this.plantId = plantId;
+    public void setRecipeId(int recipeId) {
+        this.recipeId = recipeId;
     }
 }

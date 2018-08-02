@@ -21,6 +21,7 @@ import butterknife.Unbinder;
 import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.data.PlantDetail;
 import io.monteirodev.comfreyproject.data.database.AppDatabase;
+import io.monteirodev.comfreyproject.ui.DetailsAdapter;
 
 public class PlantDetailsFragment extends Fragment {
 
@@ -29,7 +30,7 @@ public class PlantDetailsFragment extends Fragment {
     @BindView(R.id.plant_details_recycler_view)
     RecyclerView mRecyclerView;
 
-    PlantDetailsAdapter mPlantDetailsAdapter;
+    private DetailsAdapter mDetailsAdapter;
 
     private int mPlantId = -1;
     private Unbinder unbinder;
@@ -48,8 +49,8 @@ public class PlantDetailsFragment extends Fragment {
             mPlantId = savedInstanceState.getInt(KEY_PLANT_ID, -1);
         }
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mPlantDetailsAdapter = new PlantDetailsAdapter();
-        mRecyclerView.setAdapter(mPlantDetailsAdapter);
+        mDetailsAdapter = new DetailsAdapter();
+        mRecyclerView.setAdapter(mDetailsAdapter);
 
         setupViewModel();
 
@@ -60,7 +61,8 @@ public class PlantDetailsFragment extends Fragment {
         FragmentActivity activity = getActivity();
         if (activity != null && mPlantId != -1) {
             mDb = AppDatabase.getInstance(activity.getApplicationContext());
-            PlantDetailsViewModelFactory factory = new PlantDetailsViewModelFactory(mDb, mPlantId);
+            PlantDetailsViewModelFactory factory =
+                    new PlantDetailsViewModelFactory(mDb, mPlantId);
             PlantDetailsViewModel plantDetailsViewModel =
                     ViewModelProviders.of(this, factory).get(PlantDetailsViewModel.class);
             subscribeToModel(plantDetailsViewModel);
@@ -73,7 +75,7 @@ public class PlantDetailsFragment extends Fragment {
             public void onChanged(@Nullable List<PlantDetail> plantDetails) {
                 model.getPlantDetails().removeObserver(this);
                 if (plantDetails != null) {
-                    mPlantDetailsAdapter.setDetailList(plantDetails);
+                    mDetailsAdapter.setDetailList(plantDetails);
                 }
             }
         });

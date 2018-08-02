@@ -1,4 +1,4 @@
-package io.monteirodev.comfreyproject.ui.plants;
+package io.monteirodev.comfreyproject.ui;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -15,28 +15,28 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.monteirodev.comfreyproject.R;
-import io.monteirodev.comfreyproject.data.PlantDetail;
+import io.monteirodev.comfreyproject.data.Detail;
 import io.monteirodev.comfreyproject.utils.GlideApp;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 import static com.bumptech.glide.load.engine.DiskCacheStrategy.AUTOMATIC;
 
-public class PlantDetailsAdapter extends RecyclerView.Adapter<PlantDetailsAdapter.DetailViewHolder> {
+public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.DetailViewHolder>{
 
-    private List<PlantDetail> mPlantDetails;
+    private List<? extends Detail> mDetails;
 
     @NonNull
     @Override
     public DetailViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.plant_details_item, parent, false);
+        View view = inflater.inflate(R.layout.details_item, parent, false);
         return new DetailViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull DetailViewHolder holder, int position) {
-        PlantDetail detail = mPlantDetails.get(position);
+        Detail detail = mDetails.get(position);
 
         if (TextUtils.isEmpty(detail.getImageUrl())) {
             holder.imageView.setVisibility(GONE);
@@ -65,14 +65,14 @@ public class PlantDetailsAdapter extends RecyclerView.Adapter<PlantDetailsAdapte
 
     @Override
     public int getItemCount() {
-        if (null == mPlantDetails) {
+        if (null == mDetails) {
             return 0;
         }
-        return mPlantDetails.size();
+        return mDetails.size();
     }
 
-    public void setDetailList(List<PlantDetail> newPlantDetails) {
-        mPlantDetails = newPlantDetails;
+    public void setDetailList(List<? extends Detail> newDetails) {
+        mDetails = newDetails;
         notifyDataSetChanged();
     }
 

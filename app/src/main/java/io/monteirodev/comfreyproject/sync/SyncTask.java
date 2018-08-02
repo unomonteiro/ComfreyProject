@@ -6,13 +6,20 @@ import android.util.Log;
 
 import com.google.android.gms.common.util.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.monteirodev.comfreyproject.api.ComfreyClient;
 import io.monteirodev.comfreyproject.api.ComfreyInterface;
+import io.monteirodev.comfreyproject.data.About;
+import io.monteirodev.comfreyproject.data.AboutDetail;
 import io.monteirodev.comfreyproject.data.ComfreyData;
+import io.monteirodev.comfreyproject.data.GetInvolved;
+import io.monteirodev.comfreyproject.data.GetInvolvedDetail;
 import io.monteirodev.comfreyproject.data.Plant;
 import io.monteirodev.comfreyproject.data.PlantDetail;
+import io.monteirodev.comfreyproject.data.Recipe;
+import io.monteirodev.comfreyproject.data.RecipeDetail;
 import io.monteirodev.comfreyproject.data.database.AppDatabase;
 
 public class SyncTask {
@@ -31,22 +38,12 @@ public class SyncTask {
                 Log.d(TAG, "syncData: we have comfreyData!");
                 mDb = AppDatabase.getInstance(context.getApplicationContext());
 
-                mDb.plantsDao().deleteAll();
-                mDb.plantDetailsDao().deleteAll();
+                cleanOldData(mDb);
 
-                List<Plant> plants = comfreyData.getPlants();
-                if (!CollectionUtils.isEmpty(plants)) {
-                    mDb.plantsDao().insertList(plants);
-                    for (Plant plant : plants) {
-                        List<PlantDetail> plantDetails = plant.getDetails();
-                        if (!CollectionUtils.isEmpty(plantDetails)) {
-                            for (PlantDetail detail : plantDetails) {
-                                detail.setPlantId(plant.getId());
-                                mDb.plantDetailsDao().insert(detail);
-                            }
-                        }
-                    }
-                }
+                insertPlants(mDb, comfreyData.getPlants());
+                insertRecipes(mDb, comfreyData.getRecipes());
+                insertGetInvolved(mDb, comfreyData.getGetInvolved());
+                insertAbout(mDb, comfreyData.getAbout());
                 Log.d(TAG, "syncData: comfreyData inserted in database");
             }
         } catch (Exception e) {
@@ -55,5 +52,74 @@ public class SyncTask {
 
         Log.d(TAG, "syncData: complete");
 
+    }
+
+    private static void cleanOldData(AppDatabase db) {
+        db.plantsDao().deleteAll();
+        db.plantDetailsDao().deleteAll();
+        db.recipesDao().deleteAll();
+        db.recipeDetailsDao().deleteAll();
+        db.getInvolvedDetailsDao().deleteAll();
+        db.aboutDetailsDao().deleteAll();
+    }
+
+    private static void insertPlants(AppDatabase db, List<Plant> plants) {
+        if (!CollectionUtils.isEmpty(plants)) {
+            db.plantsDao().insertList(plants);
+            insertPlantDetails(db, plants);
+        }
+    }
+
+    private static void insertPlantDetails(AppDatabase db, List<Plant> plants) {
+        for (Plant plant : plants) {
+            List<PlantDetail> plantDetails = plant.getDetails();
+            if (!CollectionUtils.isEmpty(plantDetails)) {
+                for (PlantDetail detail : plantDetails) {
+                    detail.setPlantId(plant.getId());
+                    db.plantDetailsDao().insert(detail);
+                }
+            }
+        }
+    }
+
+    private static void insertRecipes(AppDatabase db, List<Recipe> recipes) {
+        if (!CollectionUtils.isEmpty(recipes)) {
+            db.recipesDao().insertList(recipes);
+            insertRecipeDetails(db, recipes);
+        }
+    }
+
+    private static void insertRecipeDetails(AppDatabase db, List<Recipe> recipes) {
+        for (Recipe recipe : recipes) {
+            List<RecipeDetail> recipeDetails = recipe.getDetails();
+            if (!CollectionUtils.isEmpty(recipeDetails)) {
+                for (RecipeDetail detail : recipeDetails) {
+                    detail.setRecipeId(recipe.getId());
+                    db.recipeDetailsDao().insert(detail);
+                }
+            }
+        }
+    }
+
+    private static void insertGetInvolved(AppDatabase db, GetInvolved getInvolved) {
+        if (getInvolved!= null) {
+            ArrayList<GetInvolvedDetail> getInvolvedDetails = getInvolved.getDetails();
+            if (!CollectionUtils.isEmpty(getInvolvedDetails)) {
+                for (GetInvolvedDetail detail : getInvolvedDetails) {
+                    db.getInvolvedDetailsDao().insert(detail);
+                }
+            }
+        }
+    }
+
+    private static void insertAbout(AppDatabase db, About about) {
+        if (about != null) {
+            List<AboutDetail> aboutDetails = about.getDetails();
+            if (!CollectionUtils.isEmpty(aboutDetails)) {
+                for (AboutDetail detail : aboutDetails) {
+                    db.aboutDetailsDao().insert(detail);
+                }
+            }
+        }
     }
 }

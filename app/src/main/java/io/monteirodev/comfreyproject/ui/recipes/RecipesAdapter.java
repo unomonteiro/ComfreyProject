@@ -1,7 +1,6 @@
 package io.monteirodev.comfreyproject.ui.recipes;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -18,6 +17,8 @@ import butterknife.ButterKnife;
 import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.data.Recipe;
 import io.monteirodev.comfreyproject.utils.GlideApp;
+
+import static com.bumptech.glide.load.engine.DiskCacheStrategy.AUTOMATIC;
 
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeViewHolder> {
 
@@ -42,12 +43,13 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
     public void onBindViewHolder(@NonNull final RecipeViewHolder holder, int position) {
         final Recipe recipe = mRecipes.get(position);
         holder.itemView.setTag(position);
-        String imageUrl = recipe.getImage();
+        String imageUrl = recipe.getImageUrl();
         if (TextUtils.isEmpty(imageUrl)) {
             holder.recipeImage.setImageResource(R.drawable.wide_image_placeholder);
         } else {
             GlideApp.with(holder.recipeImage.getContext())
                     .load(imageUrl)
+                    .diskCacheStrategy(AUTOMATIC)
                     .into(holder.recipeImage);
         }
         holder.recipeName.setText(recipe.getName());
@@ -84,9 +86,11 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
 
     public void setSelectedPosition(int newPosition) {
         // Updating old as well as new positions
-        notifyItemChanged(selectedPosition);
-        selectedPosition = newPosition;
-        notifyItemChanged(selectedPosition);
+        if (newPosition != RecyclerView.NO_POSITION) {
+            notifyItemChanged(selectedPosition);
+            selectedPosition = newPosition;
+            notifyItemChanged(selectedPosition);
+        }
     }
 
     public interface RecipesClickListener {

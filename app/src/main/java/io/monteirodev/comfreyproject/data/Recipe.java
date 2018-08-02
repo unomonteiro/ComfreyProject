@@ -1,23 +1,26 @@
 package io.monteirodev.comfreyproject.data;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
 
+@Entity(tableName = "recipes")
 public class Recipe implements Parcelable {
+    @PrimaryKey
     private int id;
     private String name;
-    private String image;
-    private ArrayList<Ingredient> ingredients = null;
-    private ArrayList<Step> steps = null;
+    private String imageUrl;
+    @Ignore
+    private ArrayList<RecipeDetail> details;
 
-    public Recipe(int id, String name, String image, ArrayList<Ingredient> ingredients, ArrayList<Step> steps) {
+    public Recipe(int id, String name, String imageUrl) {
         this.id = id;
         this.name = name;
-        this.image = image;
-        this.ingredients = ingredients;
-        this.steps = steps;
+        this.imageUrl = imageUrl;
     }
 
     public int getId() {
@@ -28,33 +31,25 @@ public class Recipe implements Parcelable {
         return name;
     }
 
-    public String getImage() {
-        return image;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public ArrayList<Ingredient> getIngredients() {
-        return ingredients;
+    public ArrayList<RecipeDetail> getDetails() {
+        return details;
     }
 
-    public ArrayList<Step> getSteps() {
-        return steps;
-    }
-
-    private Recipe(Parcel in) {
+    protected Recipe(Parcel in) {
         id = in.readInt();
         name = in.readString();
-        image = in.readString();
-        ingredients = in.createTypedArrayList(Ingredient.CREATOR);
-        steps = in.createTypedArrayList(Step.CREATOR);
+        imageUrl = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(id);
         dest.writeString(name);
-        dest.writeString(image);
-        dest.writeTypedList(ingredients);
-        dest.writeTypedList(steps);
+        dest.writeString(imageUrl);
     }
 
     @Override
