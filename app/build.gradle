@@ -6,8 +6,8 @@ android {
         applicationId "io.monteirodev.comfreyproject"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 4
-        versionName "1.04"
+        versionCode 5
+        versionName "1.05"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
