@@ -153,10 +153,12 @@ public class PlantDetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public void setDetails(List<PlantDetail> newPlantDetails) {
         mDetails = newPlantDetails;
+        notifyDataSetChanged();
     }
 
     public void setRecipe(Recipe newRecipe) {
         mRecipe = newRecipe;
+        notifyDataSetChanged();
     }
 
     public interface RecipeClickListener {
