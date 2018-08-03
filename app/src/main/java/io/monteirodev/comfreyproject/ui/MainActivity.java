@@ -17,6 +17,8 @@ import butterknife.ButterKnife;
 import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.data.MyMenuOption;
 import io.monteirodev.comfreyproject.sync.SyncUtils;
+import io.monteirodev.comfreyproject.ui.about.AboutActivity;
+import io.monteirodev.comfreyproject.ui.getInvolved.GetInvolvedActivity;
 import io.monteirodev.comfreyproject.ui.plants.PlantsActivity;
 import io.monteirodev.comfreyproject.ui.recipes.RecipesActivity;
 
@@ -62,8 +64,8 @@ public class MainActivity extends AppCompatActivity implements MenuAdapter.MenuC
         List<MyMenuOption> menuOptions = new ArrayList<>();
         menuOptions.add(new MyMenuOption(PLANTS, getString(R.string.plants), R.drawable.plants));
         menuOptions.add(new MyMenuOption(RECIPES, getString(R.string.recipes), R.drawable.recipes));
-        menuOptions.add(new MyMenuOption(GET_INVOLVED, getString(R.string.get_involved), R.drawable.wide_image_placeholder));
-        menuOptions.add(new MyMenuOption(ABOUT, getString(R.string.about), R.drawable.wide_image_placeholder));
+        menuOptions.add(new MyMenuOption(GET_INVOLVED, getString(R.string.get_involved), R.drawable.get_involved));
+        menuOptions.add(new MyMenuOption(ABOUT, getString(R.string.about), R.drawable.about));
         return menuOptions;
     }
 

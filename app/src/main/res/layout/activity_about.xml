@@ -3,8 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.AboutActivity">
+    tools:context=".ui.about.AboutActivity">
 
-    <include layout="@layout/lorem_text_views" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/about_recycler_view"
+        style="@style/recycler_style"
+        tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        tools:listitem="@layout/details_item" />
 
 </FrameLayout>
