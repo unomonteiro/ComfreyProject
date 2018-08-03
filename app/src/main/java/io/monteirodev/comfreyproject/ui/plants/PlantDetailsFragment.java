@@ -2,6 +2,7 @@ package io.monteirodev.comfreyproject.ui.plants;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -20,17 +21,21 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.data.PlantDetail;
+import io.monteirodev.comfreyproject.data.Recipe;
 import io.monteirodev.comfreyproject.data.database.AppDatabase;
-import io.monteirodev.comfreyproject.ui.DetailsAdapter;
+import io.monteirodev.comfreyproject.ui.recipes.RecipeDetailsActivity;
 
-public class PlantDetailsFragment extends Fragment {
+import static io.monteirodev.comfreyproject.ui.recipes.RecipeDetailsActivity.RECIPE_EXTRA;
+
+public class PlantDetailsFragment extends Fragment implements
+        PlantDetailsAdapter.RecipeClickListener {
 
     private static final String KEY_PLANT_ID = "key_plant_id";
 
     @BindView(R.id.plant_details_recycler_view)
     RecyclerView mRecyclerView;
 
-    private DetailsAdapter mDetailsAdapter;
+    private PlantDetailsAdapter mPlantDetailsAdapter;
 
     private int mPlantId = -1;
     private Unbinder unbinder;
@@ -49,8 +54,8 @@ public class PlantDetailsFragment extends Fragment {
             mPlantId = savedInstanceState.getInt(KEY_PLANT_ID, -1);
         }
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mDetailsAdapter = new DetailsAdapter();
-        mRecyclerView.setAdapter(mDetailsAdapter);
+        mPlantDetailsAdapter = new PlantDetailsAdapter(this);
+        mRecyclerView.setAdapter(mPlantDetailsAdapter);
 
         setupViewModel();
 
@@ -75,7 +80,16 @@ public class PlantDetailsFragment extends Fragment {
             public void onChanged(@Nullable List<PlantDetail> plantDetails) {
                 model.getPlantDetails().removeObserver(this);
                 if (plantDetails != null) {
-                    mDetailsAdapter.setDetailList(plantDetails);
+                    mPlantDetailsAdapter.setDetails(plantDetails);
+                }
+            }
+        });
+        model.getRecipe().observe(this, new Observer<Recipe>() {
+            @Override
+            public void onChanged(@Nullable Recipe recipe) {
+                model.getRecipe().removeObserver(this);
+                if (recipe != null) {
+                    mPlantDetailsAdapter.setRecipe(recipe);
                 }
             }
         });
@@ -98,5 +112,12 @@ public class PlantDetailsFragment extends Fragment {
 
     public void setPlantId(int plantId) {
         mPlantId = plantId;
+    }
+
+    @Override
+    public void onRecipeClick(Recipe recipe) {
+        Intent detailIntent = new Intent(getActivity(), RecipeDetailsActivity.class);
+        detailIntent.putExtra(RECIPE_EXTRA, recipe);
+        startActivity(detailIntent);
     }
 }

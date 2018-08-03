@@ -20,6 +20,11 @@ public abstract class RecipesDao implements BaseDao<Recipe> {
     @Query("SELECT * FROM recipes where id = :id")
     public abstract LiveData<Recipe> loadRecipe(int id);
 
+    @Query("SELECT recipes.* FROM recipes " +
+            "INNER JOIN plants ON plants.recipeId = recipes.id " +
+            "WHERE plants.id = :plantId")
+    public abstract LiveData<Recipe> loadRecipeByPlantId(int plantId);
+
     @Query("delete from recipes")
     public abstract void deleteAll();
 }

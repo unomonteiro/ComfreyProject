@@ -64,8 +64,7 @@ public class SyncUtils {
             public void run() {
                 AppDatabase db = AppDatabase.getInstance(context.getApplicationContext());
                 // todo isEmpty for recipes, getInvolved, About
-                List<Plant> plants = db.plantsDao().getPlants();
-                if (CollectionUtils.isEmpty(plants)) {
+                if (db.plantsDao().countPlants() == 0) {
                     startImmediateSync(context);
                 }
             }
