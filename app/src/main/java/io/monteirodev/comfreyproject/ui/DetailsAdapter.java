@@ -16,6 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.data.Detail;
+import io.monteirodev.comfreyproject.ui.about.AboutActivity;
 import io.monteirodev.comfreyproject.utils.GlideApp;
 
 import static android.view.View.GONE;
@@ -25,6 +26,15 @@ import static com.bumptech.glide.load.engine.DiskCacheStrategy.AUTOMATIC;
 public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.DetailViewHolder>{
 
     private List<? extends Detail> mDetails;
+    private DetailClickListener mDetailClickListener;
+
+    public DetailsAdapter() {
+
+    }
+
+    public DetailsAdapter(DetailClickListener detailClickListener) {
+        mDetailClickListener = detailClickListener;
+    }
 
     @NonNull
     @Override
@@ -36,7 +46,7 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.DetailVi
 
     @Override
     public void onBindViewHolder(@NonNull DetailViewHolder holder, int position) {
-        Detail detail = mDetails.get(position);
+        final Detail detail = mDetails.get(position);
 
         if (TextUtils.isEmpty(detail.getImageUrl())) {
             holder.imageView.setVisibility(GONE);
@@ -61,6 +71,15 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.DetailVi
             holder.bodyWebView.setVisibility(VISIBLE);
             holder.bodyWebView.loadData(detail.getBody(), "text/html", null);
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mDetailClickListener != null) {
+                    mDetailClickListener.onClick(detail);
+                }
+            }
+        });
     }
 
     @Override
@@ -74,6 +93,10 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.DetailVi
     public void setDetailList(List<? extends Detail> newDetails) {
         mDetails = newDetails;
         notifyDataSetChanged();
+    }
+
+    public interface DetailClickListener {
+        void onClick(Detail detail);
     }
 
     public class DetailViewHolder extends RecyclerView.ViewHolder {
