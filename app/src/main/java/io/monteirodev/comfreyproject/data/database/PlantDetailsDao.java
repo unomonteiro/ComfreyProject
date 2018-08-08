@@ -11,6 +11,9 @@ import io.monteirodev.comfreyproject.data.PlantDetail;
 @Dao
 public abstract class PlantDetailsDao implements BaseDao<PlantDetail> {
 
+    @Query("SELECT count(1) FROM plantDetails")
+    public abstract int countPlantDetails();
+
     @Query("SELECT * FROM plantDetails where plantId = :plantId")
     public abstract LiveData<List<PlantDetail>> loadPlantDetails(int plantId);
 

@@ -11,6 +11,9 @@ import io.monteirodev.comfreyproject.data.GetInvolvedDetail;
 @Dao
 public abstract class GetInvolvedDetailsDao implements BaseDao<GetInvolvedDetail> {
 
+    @Query("SELECT count(1) FROM getInvolvedDetails")
+    public abstract int countGetInvolvedDetails();
+
     @Query("SELECT * FROM getInvolvedDetails")
     public abstract LiveData<List<GetInvolvedDetail>> loadGetInvolvedDetails();
 

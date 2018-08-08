@@ -63,8 +63,13 @@ public class SyncUtils {
             @Override
             public void run() {
                 AppDatabase db = AppDatabase.getInstance(context.getApplicationContext());
-                // todo isEmpty for recipes, getInvolved, About
-                if (db.plantsDao().countPlants() == 0) {
+
+                if (db.plantsDao().countPlants() == 0 ||
+                        db.plantDetailsDao().countPlantDetails() == 0 ||
+                        db.recipesDao().countRecipes() == 0 ||
+                        db.recipeDetailsDao().countRecipeDetails() == 0 ||
+                        db.getInvolvedDetailsDao().countGetInvolvedDetails() == 0 ||
+                        db.aboutDetailsDao().countAboutDetails() == 0) {
                     startImmediateSync(context);
                 }
             }
