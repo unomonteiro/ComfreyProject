@@ -57,6 +57,14 @@ dependencies {
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "com.android.support.test:runner:$runnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoCoreVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-intents:$espressoCoreVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$espressoCoreVersion", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'design'
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }
+
 
     // butterknife
     implementation "com.jakewharton:butterknife:$butterknifeVersion"
