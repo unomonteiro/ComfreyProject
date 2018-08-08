@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Comfrey Project</string>
+
+    <string name="detail_error_message">Oops, algo explodiu!</string>
+    <string name="image_content_description">imagem</string>
+
+    <string name="plants">Plantas</string>
+    <string name="plants_with_name">Plantas - %s</string>
+
+    <string name="recipes">Receitas</string>
+    <string name="recipes_with_name">Receitas - %s</string>
+    <string name="ingredients">Ingredientes</string>
+    <string name="quantity_measure_ingredient">%1$s&lt;b>%2$s %3$s&lt;/b> %4$s</string>
+    <string name="number_step">%1$d. %2$s</string>
+
+    <string name="get_involved">Fazer Parte</string>
+
+    <string name="about">Acerca</string>
+
+    <!--firebase messaging-->
+    <!--
+    This is the name that users will see when interacting with this channel.
+    It should describe the category of notifications that will be sent through this channel
+ -->
+    <string name="default_notification_channel_name" translatable="true">Noticias</string>
+
+</resources>

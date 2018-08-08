@@ -1,18 +1,14 @@
 <resources>
     <string name="app_name">Comfrey Project</string>
 
-    <string name="detail_error_message">Oops, bad weed!</string>
+    <string name="detail_error_message">Oops, something went wrong!</string>
     <string name="image_content_description">image</string>
 
     <string name="plants">Plants</string>
     <string name="plants_with_name">Plants - %s</string>
-    <string name="plant_picture_content_description">plant picture</string>
-    <string name="plant_care">Care</string>
-    <string name="plant_information">Information</string>
 
     <string name="recipes">Recipes</string>
     <string name="recipes_with_name">Recipes - %s</string>
-    <string name="recipe_picture_content_description">recipe image</string>
     <string name="ingredients">Ingredients</string>
     <string name="quantity_measure_ingredient">%1$s&lt;b>%2$s %3$s&lt;/b> %4$s</string>
     <string name="number_step">%1$d. %2$s</string>
@@ -21,27 +17,17 @@
 
     <string name="about">About</string>
 
-    <string name="lorem_m">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, tincidunt a interdum a, ornare ut leo. Phasellus id varius metus. Donec et rhoncus sapien. Etiam vitae sodales dolor. Cras maximus facilisis cursus."</string>
-    <string name="lorem_l">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, tincidunt a interdum a, ornare ut leo. Phasellus id varius metus. Donec et rhoncus sapien. Etiam vitae sodales dolor. Cras maximus facilisis cursus. Nullam pretium neque quis elit gravida convallis. Praesent maximus turpis sed feugiat volutpat. Vestibulum lorem magna, gravida eu cursus sed, tincidunt vel diam. In eu massa non lacus tristique dignissim id vitae nulla."</string>
-
-    <string name="lorem_xl">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, tincidunt a interdum a, ornare ut leo. Phasellus id varius metus. Donec et rhoncus sapien. Etiam vitae sodales dolor. Cras maximus facilisis cursus. Nullam pretium neque quis elit gravida convallis. Praesent maximus turpis sed feugiat volutpat. Vestibulum lorem magna, gravida eu cursus sed, tincidunt vel diam. In eu massa non lacus tristique dignissim id vitae nulla. Morbi sit amet dui pellentesque, egestas arcu in, congue magna. Proin faucibus leo id sapien condimentum, id sodales metus cursus. Nam urna libero, pellentesque eget tortor at, aliquet pulvinar sapien. Nam at purus in leo laoreet imperdiet et non neque. Quisque bibendum massa libero, quis tempus neque aliquam ut. Maecenas accumsan lorem mollis, consectetur massa sit amet, dignissim elit."</string>
 
     <!--firebase messaging-->
-    <string name="quickstart_message">Click the SUBSCRIBE TO NEWS button below to subscribe to the
-        news topic. Messages sent to the news topic will be received. The LOG TOKEN button logs the
-        InstanceID token to logcat.</string>
-    <string name="subscribe_to_news">Subscribe To News</string>
-    <string name="log_token">Log Token</string>
-
-    <string name="msg_subscribed">Subscribed to news topic</string>
     <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
-
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
     <!--
         This is the name that users will see when interacting with this channel.
         It should describe the category of notifications that will be sent through this channel
      -->
     <string name="default_notification_channel_name" translatable="true">News</string>
-    <string name="msg_subscribe_failed">Failed to subscribe to news topic</string>
+
+
+    <string name="lorem_m" translatable="false">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, tincidunt a interdum a, ornare ut leo. Phasellus id varius metus. Donec et rhoncus sapien. Etiam vitae sodales dolor. Cras maximus facilisis cursus."</string>
 
 </resources>

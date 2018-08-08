@@ -15,9 +15,10 @@
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:elevation="@dimen/dimen4dp"
+        tools:ignore="UnusedAttribute"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <android.support.design.widget.CollapsingToolbarLayout
+        <net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="256dp"
@@ -42,7 +43,7 @@
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
                     android:fitsSystemWindows="true"
-                    android:contentDescription="@string/plant_picture_content_description"
+                    android:contentDescription="@string/image_content_description"
                     android:theme="@style/ThemeOverlay.AppCompat.Dark"
                     tools:background="@tools:sample/backgrounds/scenic"/>
 
@@ -60,7 +61,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-        </android.support.design.widget.CollapsingToolbarLayout>
+        </net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
     <FrameLayout android:id="@+id/plant_container"
