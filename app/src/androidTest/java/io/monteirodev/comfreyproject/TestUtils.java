@@ -14,16 +14,13 @@ import static android.support.test.espresso.core.internal.deps.dagger.internal.P
 
 public class TestUtils {
 
-
-
     @NonNull
     public static String getString(int stringId) {
         Resources res = getInstrumentation().getTargetContext().getResources();
         return res.getString(stringId);
     }
 
-
-
+    /** https://stackoverflow.com/a/34795431/1329854 */
     public static Matcher<View> atPosition(final int position, @NonNull final Matcher<View> itemMatcher) {
         checkNotNull(itemMatcher);
         return new BoundedMatcher<View, RecyclerView>(RecyclerView.class) {
