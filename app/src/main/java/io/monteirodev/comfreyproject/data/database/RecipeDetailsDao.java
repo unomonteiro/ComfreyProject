@@ -11,6 +11,9 @@ import io.monteirodev.comfreyproject.data.RecipeDetail;
 @Dao
 public abstract class RecipeDetailsDao implements BaseDao<RecipeDetail> {
 
+    @Query("SELECT count(1) FROM recipeDetails")
+    public abstract int countRecipeDetails();
+
     @Query("SELECT * FROM recipeDetails where recipeId = :recipeId")
     public abstract LiveData<List<RecipeDetail>> loadRecipeDetails(int recipeId);
 
