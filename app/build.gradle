@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'mockey'
+            keyPassword 'mockey'
+            storeFile file('../app/keystore/mockey.jks')
+            storePassword 'mockey'
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "io.monteirodev.comfreyproject"
@@ -19,6 +27,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -42,7 +51,7 @@ ext {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     // support
     implementation "com.android.support:appcompat-v7:$androidSupportVersion"
@@ -64,7 +73,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'design'
         exclude group: 'com.android.support', module: 'recyclerview-v7'
     }
-
 
     // butterknife
     implementation "com.jakewharton:butterknife:$butterknifeVersion"
