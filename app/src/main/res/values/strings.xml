@@ -6,6 +6,7 @@
 
     <string name="plants">Plants</string>
     <string name="plants_with_name">Plants - %s</string>
+    <string name="favourite">Favourite</string>
 
     <string name="recipes">Recipes</string>
     <string name="recipes_with_name">Recipes - %s</string>

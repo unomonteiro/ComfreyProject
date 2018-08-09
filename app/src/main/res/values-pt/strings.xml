@@ -8,6 +8,7 @@
 
     <string name="plants">Plantas</string>
     <string name="plants_with_name">Plantas - %s</string>
+    <string name="favourite">Favorita</string>
 
     <string name="recipes">Receitas</string>
     <string name="recipes_with_name">Receitas - %s</string>
