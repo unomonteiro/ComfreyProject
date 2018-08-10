@@ -1,5 +1,6 @@
 package io.monteirodev.comfreyproject.ui.plants;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -151,19 +152,21 @@ public class PlantDetailsActivity extends AppCompatActivity {
     }
 
     private void updateFavourite() {
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPrefs.edit();
 
-        Set<String> favouritesSet = getFavouriteSet();
+        Set<String> newFavourites = new HashSet<>();
+        Set<String> oldSet = sharedPrefs.getStringSet(PREF_FAVOURITE_PLANTS, new HashSet<String>());
+
         String plantId = String.valueOf(mPlant.getId());
-
-        if (isFavourite(favouritesSet, plantId)) {
-            favouritesSet.remove(plantId);
+        if (oldSet.contains(plantId)) {
+            oldSet.remove(plantId);
         } else {
-            favouritesSet.add(plantId);
+            newFavourites.add(plantId);
         }
+        newFavourites.addAll(oldSet);
 
-        PreferenceManager.getDefaultSharedPreferences(this)
-                .edit()
-                .putStringSet(PREF_FAVOURITE_PLANTS, favouritesSet)
+        editor.putStringSet(PREF_FAVOURITE_PLANTS, newFavourites)
                 .apply();
         WidgetIntentService.startActionUpdatePlants(this);
         updateFavouriteIcons(getFavouriteIcon());
@@ -172,16 +175,12 @@ public class PlantDetailsActivity extends AppCompatActivity {
     private boolean isFavourite() {
         Set<String> favouritesSet = getFavouriteSet();
         String plantId = String.valueOf(mPlant.getId());
-        return isFavourite(favouritesSet, plantId);
-    }
-
-    private boolean isFavourite(Set<String> favouritesSet, String plantId) {
         return favouritesSet.contains(plantId);
     }
 
     @NonNull
     private Set<String> getFavouriteSet() {
         return PreferenceManager.getDefaultSharedPreferences(this)
-                    .getStringSet(PREF_FAVOURITE_PLANTS, new HashSet<String>());
+                .getStringSet(PREF_FAVOURITE_PLANTS, new HashSet<String>());
     }
 }
