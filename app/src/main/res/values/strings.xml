@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">Comfrey Project</string>
+    <string name="app_name_small">Comfrey</string>
+    <string name="app_icon_content_description">App Icon</string>
 
     <string name="detail_error_message">Oops, something went wrong!</string>
     <string name="image_content_description">image</string>
 
     <string name="plants">Plants</string>
     <string name="plants_with_name">Plants - %s</string>
+    <string name="favourite">Favourite</string>
+    <string name="tap_for_plants">Tap me to see a list of plants you can favourite and show here</string>
 
     <string name="recipes">Recipes</string>
     <string name="recipes_with_name">Recipes - %s</string>
@@ -29,5 +33,7 @@
 
 
     <string name="lorem_m" translatable="false">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, tincidunt a interdum a, ornare ut leo. Phasellus id varius metus. Donec et rhoncus sapien. Etiam vitae sodales dolor. Cras maximus facilisis cursus."</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 
 </resources>

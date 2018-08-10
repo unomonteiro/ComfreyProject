@@ -2,12 +2,16 @@
 <resources>
 
     <string name="app_name">Comfrey Project</string>
+    <string name="app_name_small">Comfrey</string>
+    <string name="app_icon_content_description">ícone da App</string>
 
     <string name="detail_error_message">Oops, algo explodiu!</string>
     <string name="image_content_description">imagem</string>
 
     <string name="plants">Plantas</string>
     <string name="plants_with_name">Plantas - %s</string>
+    <string name="favourite">Favorita</string>
+    <string name="tap_for_plants">Toque para ver uma lista de plantas e escolher as favoritas para mostra aqui</string>
 
     <string name="recipes">Receitas</string>
     <string name="recipes_with_name">Receitas - %s</string>

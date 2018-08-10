@@ -13,9 +13,11 @@ android {
     defaultConfig {
         applicationId "io.monteirodev.comfreyproject"
         minSdkVersion 19
+        //noinspection OldTargetApi todo Investigate how to migrate to androidX components
         targetSdkVersion 27
         versionCode 5
         versionName "1.05"
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
