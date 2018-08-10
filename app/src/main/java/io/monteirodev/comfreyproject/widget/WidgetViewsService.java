@@ -3,7 +3,6 @@ package io.monteirodev.comfreyproject.widget;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
@@ -18,7 +17,7 @@ import java.util.Set;
 import io.monteirodev.comfreyproject.data.Plant;
 import io.monteirodev.comfreyproject.data.database.AppDatabase;
 
-import static io.monteirodev.comfreyproject.utils.Constants.PREF_FAVOURITE_PLANTS;
+import static io.monteirodev.comfreyproject.ui.plants.PlantDetailsActivity.PREF_FAVOURITE_PLANTS;
 
 public class WidgetViewsService extends RemoteViewsService {
 
@@ -45,11 +44,16 @@ class WidgetPlantAdapter implements RemoteViewsService.RemoteViewsFactory {
         Set<String> idStringSet = PreferenceManager.getDefaultSharedPreferences(context).getStringSet(PREF_FAVOURITE_PLANTS, new HashSet<String>());
 
         if (idStringSet.size() > 0) {
-            List<Integer> ids = new ArrayList<>();
+            final List<Integer> ids = new ArrayList<>();
             for (String idString : idStringSet) ids.add(Integer.parseInt(idString));
-
-            AppDatabase db = AppDatabase.getInstance(context.getApplicationContext());
-            mPlants = db.plantsDao().getPlantsSync(ids);
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    AppDatabase db = AppDatabase.getInstance(context.getApplicationContext());
+                    mPlants = db.plantsDao().getPlantsSync(ids);
+                }
+            });
+            thread.start();
         }
     }
 

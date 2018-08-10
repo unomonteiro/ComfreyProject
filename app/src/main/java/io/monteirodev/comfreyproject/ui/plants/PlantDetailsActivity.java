@@ -26,11 +26,11 @@ import io.monteirodev.comfreyproject.data.Plant;
 import io.monteirodev.comfreyproject.utils.GlideApp;
 import io.monteirodev.comfreyproject.widget.WidgetIntentService;
 
-import static io.monteirodev.comfreyproject.utils.Constants.PREF_FAVOURITE_PLANTS;
 
 public class PlantDetailsActivity extends AppCompatActivity {
 
     public static final String PLANT_EXTRA = "io.monteirodev.comfreyproject.ui.plants.plant_id";
+    public static final String PREF_FAVOURITE_PLANTS = "favourite_plants";
 
     @BindView(R.id.app_bar_layout)
     AppBarLayout mAppBarLayout;
