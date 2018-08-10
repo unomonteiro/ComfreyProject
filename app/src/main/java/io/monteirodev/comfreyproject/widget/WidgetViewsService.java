@@ -33,7 +33,7 @@ class WidgetPlantAdapter implements RemoteViewsService.RemoteViewsFactory {
     private Intent intent;
     private List<Plant> mPlants = new ArrayList<>();
 
-    public WidgetPlantAdapter(Context context, Intent intent) {
+    WidgetPlantAdapter(Context context, Intent intent) {
 
         this.context = context;
         this.intent = intent;
@@ -46,20 +46,14 @@ class WidgetPlantAdapter implements RemoteViewsService.RemoteViewsFactory {
         if (idStringSet.size() > 0) {
             final List<Integer> ids = new ArrayList<>();
             for (String idString : idStringSet) ids.add(Integer.parseInt(idString));
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    AppDatabase db = AppDatabase.getInstance(context.getApplicationContext());
-                    mPlants = db.plantsDao().getPlantsSync(ids);
-                }
-            });
-            thread.start();
+            AppDatabase db = AppDatabase.getInstance(context.getApplicationContext());
+            mPlants = db.plantsDao().getPlantsSync(ids);
         }
     }
 
     @Override
     public void onCreate() {
-        initData();
+//        initData();
     }
 
     @Override
