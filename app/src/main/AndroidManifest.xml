@@ -17,6 +17,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -31,6 +32,7 @@
         </activity>
         <activity
             android:name=".ui.plants.PlantDetailsActivity"
+            android:launchMode="singleTop"
             android:parentActivityName=".ui.plants.PlantsActivity"
             android:theme="@style/AppTheme.SimpleCoordinatorTheme">
             <meta-data
@@ -40,6 +42,7 @@
         <activity
             android:name=".ui.recipes.RecipesActivity"
             android:label="@string/recipes"
+            android:launchMode="singleTop"
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -47,6 +50,7 @@
         </activity>
         <activity
             android:name=".ui.recipes.RecipeDetailsActivity"
+            android:launchMode="singleTop"
             android:parentActivityName=".ui.recipes.RecipesActivity"
             android:theme="@style/AppTheme.SimpleCoordinatorTheme">
             <meta-data
@@ -56,6 +60,7 @@
         <activity
             android:name=".ui.getInvolved.GetInvolvedActivity"
             android:label="@string/get_involved"
+            android:launchMode="singleTop"
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -64,6 +69,7 @@
         <activity
             android:name=".ui.about.AboutActivity"
             android:label="@string/about"
+            android:launchMode="singleTop"
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -80,6 +86,23 @@
         </service>
         <service
             android:name=".sync.ComfreySyncIntentService"
+            android:exported="false" />
+
+        <receiver android:name=".widget.ComfreyWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/comfrey_widget_info" />
+        </receiver>
+
+        <service
+            android:name=".widget.WidgetViewsService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+        <service
+            android:name=".widget.WidgetIntentService"
             android:exported="false"/>
     </application>
 

@@ -17,9 +17,13 @@ public abstract class PlantsDao implements BaseDao<Plant> {
     @Query("SELECT * FROM plants ORDER BY name")
     public abstract LiveData<List<Plant>> loadPlants();
 
-    @Query("SELECT * FROM plants where id = :id")
+    @Query("SELECT * FROM plants WHERE id = :id")
     public abstract LiveData<Plant> loadPlant(int id);
 
-    @Query("delete from plants")
+    // https://stackoverflow.com/a/48406229/1329854
+    @Query("SELECT * FROM plants WHERE id IN (:ids) ORDER BY name")
+    public abstract List<Plant> getPlantsSync(List<Integer> ids);
+
+    @Query("DELETE FROM plants")
     public abstract void deleteAll();
 }

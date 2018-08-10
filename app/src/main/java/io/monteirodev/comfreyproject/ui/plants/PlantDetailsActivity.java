@@ -24,6 +24,7 @@ import butterknife.ButterKnife;
 import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.data.Plant;
 import io.monteirodev.comfreyproject.utils.GlideApp;
+import io.monteirodev.comfreyproject.widget.WidgetIntentService;
 
 import static io.monteirodev.comfreyproject.utils.Constants.PREF_FAVOURITE_PLANTS;
 
@@ -164,7 +165,7 @@ public class PlantDetailsActivity extends AppCompatActivity {
                 .edit()
                 .putStringSet(PREF_FAVOURITE_PLANTS, favouritesSet)
                 .apply();
-
+        WidgetIntentService.startActionUpdatePlants(this);
         updateFavouriteIcons(getFavouriteIcon());
     }
 
