@@ -9,6 +9,7 @@ import android.widget.RemoteViews;
 
 import io.monteirodev.comfreyproject.R;
 import io.monteirodev.comfreyproject.ui.MainActivity;
+import io.monteirodev.comfreyproject.ui.plants.PlantDetailsActivity;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -32,11 +33,16 @@ public class ComfreyWidget extends AppWidgetProvider {
 
         views.setOnClickPendingIntent(R.id.widget_title_layout, appPendingIntent);
         views.setOnClickPendingIntent(R.id.widget_layout_main, appPendingIntent);
+
         views.setViewVisibility(R.id.widget_empty_list_text, GONE);
         views.setViewVisibility(R.id.widget_list, VISIBLE);
-        views.setRemoteAdapter(R.id.widget_list,
-                new Intent(context, WidgetViewsService.class));
+        views.setRemoteAdapter(R.id.widget_list, new Intent(context, WidgetViewsService.class));
+        Intent detailIntent = new Intent(context, PlantDetailsActivity.class);
+        PendingIntent detailPendingIntent = PendingIntent.getActivity(
+                context, 0, detailIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        views.setPendingIntentTemplate(R.id.widget_list, detailPendingIntent);
         views.setEmptyView(R.id.widget_list, R.id.widget_empty_list_text);
+
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }

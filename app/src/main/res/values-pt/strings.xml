@@ -4,6 +4,8 @@
     <string name="app_name">Comfrey Project</string>
     <string name="app_name_small">Comfrey</string>
     <string name="app_icon_content_description">ícone da App</string>
+    <string name="appwidget_text">Comfrey</string>
+    <string name="add_widget">Adicionar widget</string>
 
     <string name="detail_error_message">Oops, algo explodiu!</string>
     <string name="image_content_description">imagem</string>

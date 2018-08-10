@@ -155,18 +155,18 @@ public class PlantDetailsActivity extends AppCompatActivity {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPrefs.edit();
 
-        Set<String> newFavourites = new HashSet<>();
-        Set<String> oldSet = sharedPrefs.getStringSet(PREF_FAVOURITE_PLANTS, new HashSet<String>());
+        // https://stackoverflow.com/a/14034804/1329854
+        Set<String> favourites = new HashSet<>(
+                sharedPrefs.getStringSet(PREF_FAVOURITE_PLANTS, new HashSet<String>()));
 
         String plantId = String.valueOf(mPlant.getId());
-        if (oldSet.contains(plantId)) {
-            oldSet.remove(plantId);
+        if (favourites.contains(plantId)) {
+            favourites.remove(plantId);
         } else {
-            newFavourites.add(plantId);
+            favourites.add(plantId);
         }
-        newFavourites.addAll(oldSet);
 
-        editor.putStringSet(PREF_FAVOURITE_PLANTS, newFavourites)
+        editor.putStringSet(PREF_FAVOURITE_PLANTS, favourites)
                 .apply();
         WidgetIntentService.startActionUpdatePlants(this);
         updateFavouriteIcons(getFavouriteIcon());

@@ -3,6 +3,7 @@ package io.monteirodev.comfreyproject.widget;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
@@ -17,6 +18,7 @@ import java.util.Set;
 import io.monteirodev.comfreyproject.data.Plant;
 import io.monteirodev.comfreyproject.data.database.AppDatabase;
 
+import static io.monteirodev.comfreyproject.ui.plants.PlantDetailsActivity.PLANT_EXTRA;
 import static io.monteirodev.comfreyproject.ui.plants.PlantDetailsActivity.PREF_FAVOURITE_PLANTS;
 
 public class WidgetViewsService extends RemoteViewsService {
@@ -84,6 +86,12 @@ class WidgetPlantAdapter implements RemoteViewsService.RemoteViewsFactory {
         }
         remoteView.setTextViewText(android.R.id.text1, mPlants.get(position).getName());
         remoteView.setTextColor(android.R.id.text1, Color.BLACK);
+
+        Bundle extras = new Bundle();
+        extras.putParcelable(PLANT_EXTRA, mPlants.get(position));
+        Intent fillInIntent = new Intent();
+        fillInIntent.putExtras(extras);
+        remoteView.setOnClickFillInIntent(android.R.id.text1, fillInIntent);
 
         return remoteView;
     }
