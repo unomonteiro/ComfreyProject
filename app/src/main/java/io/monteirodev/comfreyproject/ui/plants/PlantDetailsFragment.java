@@ -39,7 +39,6 @@ public class PlantDetailsFragment extends Fragment implements
 
     private int mPlantId = -1;
     private Unbinder unbinder;
-    private AppDatabase mDb;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -61,9 +60,9 @@ public class PlantDetailsFragment extends Fragment implements
     private void setupViewModel() {
         FragmentActivity activity = getActivity();
         if (activity != null && mPlantId != -1) {
-            mDb = AppDatabase.getInstance(activity.getApplicationContext());
+            AppDatabase db = AppDatabase.getInstance(activity.getApplicationContext());
             PlantDetailsViewModelFactory factory =
-                    new PlantDetailsViewModelFactory(mDb, mPlantId);
+                    new PlantDetailsViewModelFactory(db, mPlantId);
             PlantDetailsViewModel plantDetailsViewModel =
                     ViewModelProviders.of(this, factory).get(PlantDetailsViewModel.class);
             subscribeToModel(plantDetailsViewModel);

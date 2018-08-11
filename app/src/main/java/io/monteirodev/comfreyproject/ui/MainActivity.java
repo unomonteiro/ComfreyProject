@@ -35,9 +35,6 @@ public class MainActivity extends AppCompatActivity implements MenuAdapter.MenuC
     @BindView(R.id.loading_view)
     View mLoadingView;
 
-    private MenuAdapter mMenuAdapter;
-    private List<MyMenuOption> mMyMenuOptions;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,10 +49,10 @@ public class MainActivity extends AppCompatActivity implements MenuAdapter.MenuC
         ButterKnife.bind(this);
 
         mRecyclerView.setLayoutManager(getDeviceLayoutManager(this));
-        mMenuAdapter = new MenuAdapter(this);
-        mRecyclerView.setAdapter(mMenuAdapter);
-        mMyMenuOptions = getMyMenuOptions();
-        mMenuAdapter.setOptions(mMyMenuOptions);
+        MenuAdapter menuAdapter = new MenuAdapter(this);
+        mRecyclerView.setAdapter(menuAdapter);
+        List<MyMenuOption> myMenuOptions = getMyMenuOptions();
+        menuAdapter.setOptions(myMenuOptions);
         SyncUtils.initialise(this);
 
     }

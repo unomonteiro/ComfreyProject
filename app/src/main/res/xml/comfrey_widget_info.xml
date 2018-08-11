@@ -4,7 +4,7 @@
     android:initialLayout="@layout/widget_plants"
     android:minHeight="110dp"
     android:minWidth="110dp"
-    android:previewImage="@mipmap/ic_launcher"
+    android:previewImage="@drawable/appwidget_preview"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="5000"
-    android:widgetCategory="home_screen"></appwidget-provider>
+    android:widgetCategory="home_screen"/>

@@ -2,8 +2,6 @@
     <string name="app_name">Comfrey Project</string>
     <string name="app_name_small">Comfrey</string>
     <string name="app_icon_content_description">App Icon</string>
-    <string name="appwidget_text">Comfrey</string>
-    <string name="add_widget">Add widget</string>
 
     <string name="error_message">Oops, something just broke!</string>
     <string name="image_content_description">image</string>

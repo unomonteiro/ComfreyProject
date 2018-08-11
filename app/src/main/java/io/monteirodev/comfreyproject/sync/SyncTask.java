@@ -24,7 +24,6 @@ import io.monteirodev.comfreyproject.data.database.AppDatabase;
 
 public class SyncTask {
     private static final String TAG = SyncTask.class.getSimpleName();
-    private static AppDatabase mDb;
 
     synchronized public static void syncData(@NonNull Context context) {
         try {
@@ -36,14 +35,14 @@ public class SyncTask {
                 Log.d(TAG, "syncData: no comfreyData");
             } else {
                 Log.d(TAG, "syncData: we have comfreyData!");
-                mDb = AppDatabase.getInstance(context.getApplicationContext());
+                AppDatabase db = AppDatabase.getInstance(context.getApplicationContext());
 
-                cleanOldData(mDb);
+                cleanOldData(db);
 
-                insertPlants(mDb, comfreyData.getPlants());
-                insertRecipes(mDb, comfreyData.getRecipes());
-                insertGetInvolved(mDb, comfreyData.getGetInvolved());
-                insertAbout(mDb, comfreyData.getAbout());
+                insertPlants(db, comfreyData.getPlants());
+                insertRecipes(db, comfreyData.getRecipes());
+                insertGetInvolved(db, comfreyData.getGetInvolved());
+                insertAbout(db, comfreyData.getAbout());
                 Log.d(TAG, "syncData: comfreyData inserted in database");
             }
         } catch (Exception e) {

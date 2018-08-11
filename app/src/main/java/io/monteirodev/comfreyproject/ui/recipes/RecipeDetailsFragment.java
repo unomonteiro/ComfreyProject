@@ -34,7 +34,6 @@ public class RecipeDetailsFragment extends Fragment {
 
     private int mRecipeId;
     private Unbinder unbinder;
-    private AppDatabase mDb;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -58,9 +57,9 @@ public class RecipeDetailsFragment extends Fragment {
     private void setupViewModel() {
         FragmentActivity activity = getActivity();
         if (activity != null && mRecipeId != -1) {
-            mDb = AppDatabase.getInstance(activity.getApplicationContext());
+            AppDatabase db = AppDatabase.getInstance(activity.getApplicationContext());
             RecipeDetailsViewModelFactory factory =
-                    new RecipeDetailsViewModelFactory(mDb, mRecipeId);
+                    new RecipeDetailsViewModelFactory(db, mRecipeId);
             RecipeDetailsViewModel recipeDetailsViewModel =
                     ViewModelProviders.of(this, factory).get(RecipeDetailsViewModel.class);
             subscribeToModel(recipeDetailsViewModel);
