@@ -104,9 +104,9 @@ public class AboutActivity extends AppCompatActivity implements DetailsAdapter.D
         if (mClicks == 0) {
             getToken();
             mClicks--;
-        } else if (detail.getTitle().equalsIgnoreCase("about this app")) {
+        } else if (detail.getTitle().equalsIgnoreCase(getString(R.string.about_this_app))) {
             if (mClicks < 5) {
-                Toast.makeText(AboutActivity.this, mClicks + " clicks to ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AboutActivity.this, String.format(getString(R.string.clicks_to_secret_key), mClicks), Toast.LENGTH_SHORT).show();
             }
             mClicks--;
         }
@@ -145,7 +145,7 @@ public class AboutActivity extends AppCompatActivity implements DetailsAdapter.D
                  * The title of the chooser that the system will show
                  * to allow the user to select an app
                  */
-                .setChooserTitle("Don't share your key")
+                .setChooserTitle(R.string.dont_share_key_warning)
                 .startChooser();
     }
 }

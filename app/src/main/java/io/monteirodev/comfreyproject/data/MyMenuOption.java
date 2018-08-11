@@ -1,10 +1,10 @@
 package io.monteirodev.comfreyproject.data;
 
 public class MyMenuOption {
-    public static final String PLANTS = "plants";
-    public static final String RECIPES = "recipes";
-    public static final String GET_INVOLVED = "get_involved";
-    public static final String ABOUT = "about";
+    public static final String PLANTS = "plants_key";
+    public static final String RECIPES = "recipes_key";
+    public static final String GET_INVOLVED = "get_involved_key";
+    public static final String ABOUT = "about_key";
 
     private String key;
     private String name;

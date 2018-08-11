@@ -7,7 +7,7 @@
     <string name="appwidget_text">Comfrey</string>
     <string name="add_widget">Adicionar widget</string>
 
-    <string name="detail_error_message">Oops, algo explodiu!</string>
+    <string name="error_message">Oops, algo rebentou!</string>
     <string name="image_content_description">imagem</string>
 
     <string name="plants">Plantas</string>
@@ -24,6 +24,9 @@
     <string name="get_involved">Fazer Parte</string>
 
     <string name="about">Acerca</string>
+    <string name="about_this_app">about this app</string>
+    <string name="clicks_to_secret_key">%d clicks para revelar um segredo</string>
+    <string name="dont_share_key_warning">Não partilhe a sua chave</string>
 
     <!--firebase messaging-->
     <!--

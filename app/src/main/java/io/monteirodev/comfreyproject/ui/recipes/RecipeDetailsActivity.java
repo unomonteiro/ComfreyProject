@@ -42,7 +42,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         }
         if (mRecipe == null) {
             finish();
-            Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.error_message, Toast.LENGTH_LONG).show();
         }
 
         setSupportActionBar(mToolbar);

@@ -5,7 +5,7 @@
     <string name="appwidget_text">Comfrey</string>
     <string name="add_widget">Add widget</string>
 
-    <string name="detail_error_message">Oops, something went wrong!</string>
+    <string name="error_message">Oops, something just broke!</string>
     <string name="image_content_description">image</string>
 
     <string name="plants">Plants</string>
@@ -22,6 +22,9 @@
     <string name="get_involved">Get Involved</string>
 
     <string name="about">About</string>
+    <string name="about_this_app">about this app</string>
+    <string name="clicks_to_secret_key">%d clicks to find secret</string>
+    <string name="dont_share_key_warning">Don\'t share your key</string>
 
 
     <!--firebase messaging-->

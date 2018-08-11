@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements MenuAdapter.MenuC
                 startActivity(new Intent(this, AboutActivity.class));
                 break;
             default:
-                Toast.makeText(this, "Oops", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.error_message, Toast.LENGTH_LONG).show();
         }
 
     }
