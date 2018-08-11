@@ -36,10 +36,6 @@ public class RecipeDetailsFragment extends Fragment {
     private Unbinder unbinder;
     private AppDatabase mDb;
 
-    public RecipeDetailsFragment() {
-        // Required empty public constructor
-    }
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
