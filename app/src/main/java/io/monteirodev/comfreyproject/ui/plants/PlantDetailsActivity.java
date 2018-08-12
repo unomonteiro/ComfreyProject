@@ -142,13 +142,17 @@ public class PlantDetailsActivity extends AppCompatActivity {
     }
 
     private void hideOption(int id) {
-        MenuItem item = mMenu.findItem(id);
-        item.setVisible(false);
+        if (mMenu != null) {
+            MenuItem item = mMenu.findItem(id);
+            item.setVisible(false);
+        }
     }
 
     private void showOption(int id) {
-        MenuItem item = mMenu.findItem(id);
-        item.setVisible(true);
+        if (mMenu != null) {
+            MenuItem item = mMenu.findItem(id);
+            item.setVisible(true);
+        }
     }
 
     private void updateFavourite() {
